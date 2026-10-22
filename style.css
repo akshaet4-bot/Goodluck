@@ -1,0 +1,1077 @@
+body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .font-code {
+            font-family: 'Fira Code', monospace;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .dark .glass-card {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .dark .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #6366f1;
+            border-radius: 4px;
+        }
+
+        .key-active {
+            transform: translateY(2px);
+            background-color: #4f46e5 !important;
+            color: white !important;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+
+
+        /* =========================================
+   LOTUS CRAFTT — FUTURISTIC DEVELOPER BADGE
+   Dark Glass • Gold Shimmer • Responsive
+========================================= */
+
+        .lc-dev-badge,
+        .lc-dev-badge * {
+            box-sizing: border-box;
+        }
+
+        .lc-dev-badge {
+            --lc-gold: #d4af37;
+            --lc-gold-light: #fff3a6;
+            --lc-cyan: #38bdf8;
+            --lc-bg: #0f172a;
+
+            position: relative;
+            isolation: isolate;
+            display: inline-block;
+            max-width: 100%;
+            padding: 1px;
+            border-radius: 50px;
+
+            background: linear-gradient(125deg,
+                    rgba(212, 175, 55, 0.65),
+                    rgba(255, 255, 255, 0.08) 48%,
+                    rgba(56, 189, 248, 0.55));
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        .lc-dev-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 35px -15px rgba(212, 175, 55, 0.55);
+        }
+
+        /* Ambient gradient glow */
+
+        .lc-dev-glow {
+            position: absolute;
+            z-index: -1;
+            inset: -2px;
+            border-radius: inherit;
+
+            background: linear-gradient(110deg,
+                    var(--lc-gold),
+                    var(--lc-cyan));
+
+            filter: blur(15px);
+            opacity: 0.13;
+            pointer-events: none;
+
+            transition: opacity 0.4s ease;
+        }
+
+        .lc-dev-badge:hover .lc-dev-glow {
+            opacity: 0.42;
+        }
+
+        /* Glass container */
+
+        .lc-dev-inner {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            padding: 6px 8px 6px 16px;
+            border-radius: inherit;
+
+            background: rgba(15, 23, 42, 0.94);
+            color: #cbd5e1;
+
+            -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(14px);
+        }
+
+        /* Crafted with heart */
+
+        .lc-dev-caption {
+            flex-shrink: 0;
+            color: #94a3b8;
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            white-space: nowrap;
+        }
+
+        .lc-dev-heart {
+            display: inline-block;
+            margin: 0 2px;
+            color: #fb4565;
+
+            text-shadow: 0 0 8px rgba(251, 69, 101, 0.75);
+            animation: lc-heartbeat 1.6s ease-in-out infinite;
+        }
+
+        @keyframes lc-heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.22);
+                text-shadow: 0 0 12px rgba(251, 69, 101, 0.95);
+            }
+        }
+
+        /* Identity pill */
+
+        .lc-dev-identity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            min-width: 0;
+            padding: 5px 10px 5px 14px;
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 40px;
+            background: rgba(255, 255, 255, 0.035);
+        }
+
+        /* Brand and portfolio link */
+
+        .lc-dev-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            min-width: 0;
+            color: inherit;
+            text-decoration: none;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .lc-dev-gold {
+            display: inline-block;
+
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+
+            background: linear-gradient(110deg,
+                    #d4af37 0%,
+                    #fff 25%,
+                    #d4af37 50%,
+                    #fef08a 75%,
+                    #d4af37 100%);
+
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+
+            animation: lc-gold-shimmer 3s linear infinite;
+        }
+
+        @keyframes lc-gold-shimmer {
+            from {
+                background-position: 200% center;
+            }
+
+            to {
+                background-position: 0% center;
+            }
+        }
+
+        .lc-dev-dot {
+            color: var(--lc-gold);
+            font-size: 10px;
+            opacity: 0.8;
+        }
+
+        .lc-dev-name {
+            color: #cbd5e1;
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.1px;
+            transition: color 0.25s ease;
+        }
+
+        .lc-dev-brand:hover .lc-dev-name {
+            color: var(--lc-cyan);
+        }
+
+        /* Social quick-launch buttons */
+
+        .lc-dev-socials {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            padding-left: 10px;
+            border-left: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .lc-dev-social {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 27px;
+            height: 27px;
+            flex-shrink: 0;
+
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.045);
+
+            color: #94a3b8;
+            text-decoration: none;
+
+            transition:
+                transform 0.3s ease,
+                color 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .lc-dev-social svg {
+            width: 14px;
+            height: 14px;
+            display: block;
+        }
+
+        .lc-dev-instagram:hover {
+            color: #fff;
+            background: linear-gradient(45deg,
+                    #f09433,
+                    #e6683c,
+                    #dc2743,
+                    #cc2366,
+                    #bc1888);
+            border-color: transparent;
+            transform: scale(1.1) rotate(-6deg);
+            box-shadow: 0 4px 12px rgba(220, 39, 67, 0.3);
+        }
+
+        .lc-dev-email:hover {
+            color: #020617;
+            background: var(--lc-cyan);
+            border-color: transparent;
+            transform: scale(1.1) rotate(6deg);
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+        }
+
+        /* Keyboard accessibility */
+
+        .lc-dev-badge a:focus-visible {
+            outline: 2px solid var(--lc-cyan);
+            outline-offset: 4px;
+        }
+
+        /* Responsive layout */
+
+        @media (max-width: 520px) {
+            .lc-dev-badge {
+                max-width: 100%;
+                border-radius: 24px;
+            }
+
+            .lc-dev-inner {
+                flex-wrap: wrap;
+                gap: 8px;
+                padding: 10px 12px;
+                border-radius: 23px;
+            }
+
+            .lc-dev-identity {
+                max-width: 100%;
+                gap: 8px;
+                padding: 6px 8px;
+            }
+
+            .lc-dev-brand {
+                gap: 5px;
+            }
+
+            .lc-dev-gold {
+                font-size: 10px;
+                letter-spacing: 0.4px;
+            }
+
+            .lc-dev-name {
+                font-size: 10px;
+            }
+
+            .lc-dev-socials {
+                gap: 4px;
+                padding-left: 7px;
+            }
+
+            .lc-dev-social {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        /* Respect device motion preferences */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .lc-dev-heart,
+            .lc-dev-gold {
+                animation: none;
+            }
+
+            .lc-dev-badge,
+            .lc-dev-social,
+            .lc-dev-name,
+            .lc-dev-glow {
+                transition: none;
+            }
+        }
+
+/* =========================================================
+   RESPONSIVE LAYOUT PATCH — MOBILE / TABLET / LAPTOP / DESKTOP
+   Keeps the existing design and improves fit on small screens.
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: clip;
+}
+
+img,
+video,
+canvas,
+svg,
+iframe {
+    max-width: 100%;
+}
+
+img,
+video {
+    height: auto;
+}
+
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+    font: inherit;
+}
+
+input,
+select,
+textarea {
+    min-width: 0;
+}
+
+/* Prevent long text, URLs and code examples from widening the page. */
+pre,
+code,
+.break-words,
+[class*="break-words"] {
+    overflow-wrap: anywhere;
+}
+
+pre {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* Keep media and common content containers inside the viewport. */
+section,
+header,
+footer,
+main,
+nav {
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* Admission modal: desktop-like card, constrained to every screen. */
+#admission-modal {
+    box-sizing: border-box;
+    padding: clamp(8px, 2.5vw, 20px);
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+#admission-modal > div {
+    min-height: 100%;
+    min-height: 100dvh;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#admission-modal > div > div {
+    width: min(100%, 672px);
+    max-height: calc(100vh - 24px);
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    padding: clamp(14px, 3vw, 28px);
+    border-radius: clamp(16px, 3vw, 24px);
+}
+
+#admission-modal form {
+    min-width: 0;
+}
+
+#admission-modal label {
+    line-height: 1.35;
+}
+
+#admission-modal input,
+#admission-modal select,
+#admission-modal textarea {
+    width: 100%;
+    min-width: 0;
+    font-size: 16px; /* Stops iOS Safari from zooming on input focus. */
+}
+
+#admission-modal textarea {
+    resize: vertical;
+}
+
+#admission-modal button[type="submit"] {
+    white-space: normal;
+    line-height: 1.4;
+}
+
+/* Tablets and compact laptops. */
+@media (max-width: 1024px) {
+    html {
+        scroll-padding-top: 4rem;
+    }
+
+    section {
+        scroll-margin-top: 4rem;
+    }
+}
+
+/* Mobile phones: preserve a structured, desktop-inspired form layout. */
+@media (max-width: 640px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    #admission-modal {
+        padding: 8px;
+        align-items: stretch;
+    }
+
+    #admission-modal > div {
+        min-height: 100%;
+        min-height: 100dvh;
+        align-items: center;
+    }
+
+    #admission-modal > div > div {
+        width: 100%;
+        max-width: 560px;
+        max-height: calc(100vh - 16px);
+        max-height: calc(100dvh - 16px);
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    #admission-modal h3 {
+        font-size: clamp(19px, 5vw, 23px);
+        line-height: 1.25;
+    }
+
+    #admission-modal p {
+        line-height: 1.5;
+    }
+
+    #admission-modal form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #admission-modal form > div {
+        min-width: 0;
+    }
+
+    #admission-modal form .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    #admission-modal label {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    #admission-modal input,
+    #admission-modal select,
+    #admission-modal textarea {
+        padding: 10px;
+        border-radius: 9px;
+        font-size: 16px;
+    }
+
+    #admission-modal button[type="submit"] {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+    /* Avoid fixed-width code/demo panels causing horizontal page scroll. */
+    .overflow-x-auto {
+        max-width: 100%;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        max-width: 100%;
+    }
+}
+
+/* Very narrow phones: keep two compact fields readable where possible. */
+@media (max-width: 360px) {
+    #admission-modal {
+        padding: 5px;
+    }
+
+    #admission-modal > div > div {
+        max-height: calc(100vh - 10px);
+        max-height: calc(100dvh - 10px);
+        padding: 12px;
+        border-radius: 14px;
+    }
+
+    #admission-modal form .grid {
+        gap: 7px;
+    }
+
+    #admission-modal input,
+    #admission-modal select {
+        padding: 9px 7px;
+    }
+}
+
+
+/* =========================================================
+   GOOD LUCK COMPUTER CLASSES — PROFESSIONAL UI LAYER
+   Production-minded polish: consistent rhythm, accessible focus,
+   restrained surfaces, responsive components and reduced motion.
+   ========================================================= */
+:root {
+    --gl-primary: #4f46e5;
+    --gl-primary-hover: #4338ca;
+    --gl-accent: #0f766e;
+    --gl-radius-sm: 0.65rem;
+    --gl-radius-md: 1rem;
+    --gl-radius-lg: 1.35rem;
+    --gl-shadow-card: 0 8px 28px rgba(15, 23, 42, 0.07);
+    --gl-shadow-card-hover: 0 18px 42px rgba(15, 23, 42, 0.13);
+    --gl-focus-ring: 0 0 0 3px rgba(99, 102, 241, 0.28);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.6;
+    letter-spacing: -0.012em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    background: rgba(99, 102, 241, 0.22);
+}
+
+:focus-visible {
+    outline: 3px solid rgba(99, 102, 241, 0.8);
+    outline-offset: 3px;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+[role="button"] {
+    touch-action: manipulation;
+}
+
+button {
+    transition: background-color 180ms ease, border-color 180ms ease,
+        color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+a {
+    text-underline-offset: 0.2em;
+}
+
+/* Consistent, polished surfaces for the existing utility-class design. */
+.glass-card {
+    -webkit-backdrop-filter: blur(16px) saturate(145%);
+    backdrop-filter: blur(16px) saturate(145%);
+    border-color: rgba(148, 163, 184, 0.22);
+}
+
+.dark .glass-card {
+    border-color: rgba(148, 163, 184, 0.13);
+    background: rgba(15, 23, 42, 0.84);
+}
+
+.shadow-sm,
+.shadow-md,
+.shadow-lg,
+.shadow-xl,
+.shadow-2xl {
+    --tw-shadow-color: rgba(15, 23, 42, 0.08);
+}
+
+/* Interactive cards: lift gently, but avoid affecting layout dimensions. */
+main .rounded-2xl.border,
+section .rounded-2xl.border,
+section .rounded-3xl.border {
+    transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    section .rounded-2xl.border:hover,
+    section .rounded-3xl.border:hover {
+        border-color: rgba(99, 102, 241, 0.3);
+        box-shadow: var(--gl-shadow-card);
+    }
+}
+
+/* Form controls: legible, consistent, and comfortable to use. */
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+    border-radius: var(--gl-radius-sm);
+    transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):focus,
+select:focus,
+textarea:focus {
+    border-color: var(--gl-primary) !important;
+    box-shadow: var(--gl-focus-ring);
+    outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+    opacity: 1;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+    color: #94a3b8;
+}
+
+button:disabled,
+select:disabled {
+    cursor: not-allowed;
+}
+
+/* Clear, premium admission modal surface. */
+#admission-modal {
+    z-index: 9999;
+    background: rgba(2, 6, 23, 0.76);
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+}
+
+#admission-modal > div > div {
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    box-shadow: 0 30px 90px rgba(2, 6, 23, 0.32);
+}
+
+#admission-modal button[type="submit"] {
+    min-height: 46px;
+    border: 1px solid rgba(22, 163, 74, 0.25);
+    box-shadow: 0 8px 20px rgba(22, 163, 74, 0.16);
+}
+
+#admission-modal button[type="submit"]:hover {
+    box-shadow: 0 12px 26px rgba(22, 163, 74, 0.23);
+}
+
+/* Tables, code labs and embedded media must not widen the page. */
+pre,
+.table-responsive,
+.overflow-x-auto {
+    max-width: 100%;
+    overscroll-behavior-inline: contain;
+}
+
+iframe,
+video,
+canvas,
+svg {
+    max-width: 100%;
+}
+
+/* Breakpoint refinements. The site remains genuinely responsive rather
+   than forcing a tiny desktop viewport on mobile devices. */
+@media (min-width: 1280px) {
+    section > .max-w-7xl,
+    header .max-w-7xl,
+    footer .max-w-7xl {
+        max-width: 80rem;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 4.5rem;
+    }
+
+    body {
+        letter-spacing: 0;
+    }
+
+    section {
+        scroll-margin-top: 4.5rem;
+    }
+
+    /* Avoid overly large section padding on tablets and phones. */
+    section.py-20 {
+        padding-top: clamp(2.75rem, 8vw, 4rem);
+        padding-bottom: clamp(2.75rem, 8vw, 4rem);
+    }
+
+    .lc-dev-badge {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    /* Keep top-bar information readable without horizontal overflow. */
+    body > div:first-child .max-w-7xl {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    body > div:first-child a[href^="tel:"] {
+        white-space: nowrap;
+    }
+
+    #admission-modal > div > div {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 1.1rem;
+    }
+
+    #admission-modal form .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Prevent long labels/buttons from pushing outside small screens. */
+    #admission-modal label,
+    #admission-modal button,
+    #admission-modal p {
+        overflow-wrap: anywhere;
+    }
+
+    .lc-dev-inner {
+        gap: 7px;
+        padding-left: 10px;
+    }
+
+    .lc-dev-caption,
+    .lc-dev-name,
+    .lc-dev-gold {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    #admission-modal form .grid {
+        gap: 7px;
+    }
+
+    #admission-modal > div > div {
+        padding: 13px;
+    }
+
+    #admission-modal h3 {
+        padding-right: 1.6rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Professional Course Card Hover Effect */
+#posters .glass-card {
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+    will-change: transform;
+}
+
+#posters .glass-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(15, 23, 42, 0.12);
+    border-color: #6366f1;
+}
+
+/* Smooth Image Zoom */
+#posters .glass-card img {
+    transition: transform 0.4s ease;
+}
+
+#posters .glass-card:hover img {
+    transform: scale(1.035);
+}
+
+/* Course Title Highlight */
+#posters .glass-card h3 {
+    transition: color 0.3s ease;
+}
+
+#posters .glass-card:hover h3 {
+    color: #6366f1;
+}
+
+/* Keyboard Accessibility */
+#posters .glass-card:focus-within {
+    outline: 2px solid #6366f1;
+    outline-offset: 3px;
+}
+
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    #posters .glass-card,
+    #posters .glass-card img,
+    #posters .glass-card h3 {
+        transition: none;
+    }
+
+    #posters .glass-card:hover {
+        transform: none;
+    }
+
+    #posters .glass-card:hover img {
+        transform: none;
+    }
+}
+
+/* Explore Our Gallery - Compact CTA */
+.explore-gallery-section {
+    padding: 28px 16px;
+    background: #f8fafc;
+}
+
+.explore-gallery-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 22px 26px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: linear-gradient(135deg, #ffffff, #eef2ff);
+    border: 1px solid #dbeafe;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.explore-gallery-icon {
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: #dbeafe;
+    color: #2563eb;
+    font-size: 24px;
+}
+
+.explore-gallery-content {
+    flex: 1;
+}
+
+.explore-gallery-content h2 {
+    margin: 0 0 6px;
+    color: #0f172a;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.explore-gallery-content p {
+    margin: 0;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.explore-gallery-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-shrink: 0;
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: #fff;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.explore-gallery-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(37, 99, 235, 0.25);
+}
+
+.explore-gallery-btn:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+    .explore-gallery-section {
+        padding: 20px 14px;
+    }
+
+    .explore-gallery-card {
+        padding: 18px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .explore-gallery-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 20px;
+    }
+
+    .explore-gallery-content {
+        flex: 1 1 calc(100% - 60px);
+    }
+
+    .explore-gallery-content h2 {
+        font-size: 18px;
+    }
+
+    .explore-gallery-content p {
+        font-size: 13px;
+    }
+
+    .explore-gallery-btn {
+        width: 100%;
+        padding: 12px 16px;
+    }
+}
+
+/* Dark mode */
+.dark .explore-gallery-section {
+    background: #020617;
+}
+
+.dark .explore-gallery-card {
+    background: linear-gradient(135deg, #0f172a, #111c3a);
+    border-color: #263449;
+}
+
+.dark .explore-gallery-icon {
+    background: #1e3a8a;
+    color: #bfdbfe;
+}
+
+.dark .explore-gallery-content h2 {
+    color: #f8fafc;
+}
+
+.dark .explore-gallery-content p {
+    color: #cbd5e1;
+}

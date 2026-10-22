@@ -1,0 +1,3093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Responsive layout -->
+    <meta name="viewport" content="width=1024">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Website CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body
+    class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 min-h-screen selection:bg-brand-500 selection:text-white custom-scrollbar">
+
+    <!-- Top Announcement Bar -->
+    <div
+        class="bg-gradient-to-r from-brand-600 via-indigo-600 to-purple-600 text-white text-xs md:text-sm py-2 px-4 text-center font-medium shadow-md">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <span class="hidden md:inline"><i class="fa-solid fa-bullhorn mr-2 animate-bounce"></i> Admissions Open
+                2026.
+                Enroll Now!!!</span>
+            <div class="flex items-center gap-4 text-xs">
+                <a href="tel:+919021179106" class="hover:underline flex items-center gap-1"><i
+                        class="fa-solid fa-phone"></i> +91 9021179106</a>
+                <span class="opacity-50">|</span>
+                <span class="bg-white/20 px-2 py-0.5 rounded-full"><i class="fa-solid fa-location-dot mr-1"></i> Muslim
+                    Library Sq, Bhandara</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header
+        class="sticky top-0 z-50 glass-card transition-all duration-300 shadow-sm border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+
+                <!-- Brand Logo & Title -->
+                <a href="#" class="flex items-center gap-3 sm:gap-4 group min-w-0">
+                    <div
+                        class="w-36 sm:w-48 md:w-56 shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-[1.03]">
+                        <img src="img/LOGO.png" alt="Good Luck Computer Classes Logo"
+                            class="block w-full h-auto object-contain" />
+                    </div>
+                    <div class="min-w-0 flex-1">
+
+                        <p
+                            class="mt-1 text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium leading-relaxed">
+                            Computer &amp; Technical Institute
+                            <span class="hidden sm:inline">•</span>
+                            <span class="block sm:inline">Pravin Mohabey Sir</span>
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Navigation links are available from the menu button on every screen size. -->
+                <nav class="hidden text-sm font-semibold text-slate-700 dark:text-slate-200"
+                    aria-label="Primary navigation">
+                    <a href="#hero" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Home</a>
+                    <a href="#posters"
+                        class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors flex items-center gap-1"><i
+                            class="fa-solid fa-images text-pink-500"></i> Gallery</a>
+                    <a href="#courses"
+                        class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Courses</a>
+                    <a href="#typing-zone"
+                        class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors flex items-center gap-1"><i
+                            class="fa-solid fa-keyboard text-brand-500"></i> Typing Test</a>
+                    <a href="#quiz-arena"
+                        class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors flex items-center gap-1"><i
+                            class="fa-solid fa-laptop-code text-purple-500"></i> Quiz</a>
+                    <a href="#terminal-section"
+                        class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors flex items-center gap-1"><i
+                            class="fa-solid fa-terminal text-emerald-500"></i> Live Terminal</a>
+                    <a href="#code-lab"
+                        class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors flex items-center gap-1"><i
+                            class="fa-solid fa-code text-indigo-500"></i> Code Lab</a>
+                    <a href="#testimonials"
+                        class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Testimonials</a>
+                    <a href="#gallery-popup" onclick="openGalleryPopup(); return false;"
+                        class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Achievements</a>
+                    <a href="#contact"
+                        class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Action Controls: Day/Night Mode & CTA -->
+                <div class="flex items-center gap-3">
+                    <button id="theme-toggle" aria-label="Toggle Theme"
+                        class="p-2.5 rounded-xl bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-brand-500 hover:text-white dark:hover:bg-brand-600 transition-all duration-300 shadow-inner">
+                        <i id="theme-toggle-dark-icon" class="fa-solid fa-moon text-lg hidden"></i>
+                        <i id="theme-toggle-light-icon" class="fa-solid fa-sun text-lg text-amber-400"></i>
+                    </button>
+
+                    <a href="#admission-modal" onclick="toggleModal('admission-modal')"
+                        class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-bold text-sm shadow-md shadow-brand-500/25 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Enroll Now</span>
+                    </a>
+
+                    <button id="mobile-menu-btn" aria-label="Open Navigation Menu"
+                        class="p-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation Menu: all site sections, available on desktop and mobile -->
+        <div id="mobile-menu" role="navigation" aria-label="Main menu"
+            class="hidden max-h-[75vh] overflow-y-auto border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 px-4 sm:px-6 pt-3 pb-6">
+            <div class="mx-auto grid max-w-7xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
+                <a href="#hero" onclick="closeNavigationMenu()"
+                    class="block py-2 text-base font-semibold text-slate-700 dark:text-slate-200 hover:text-brand-600">Home</a>
+                <a href="#posters" onclick="closeNavigationMenu()"
+                    class="block py-2 text-base font-semibold text-pink-600 dark:text-pink-400">Posters
+                    Gallery</a>
+                <a href="#about-institute" onclick="closeNavigationMenu()"
+                    class="block py-2 text-base font-semibold text-slate-700 dark:text-slate-200">About Our
+                    Institute</a>
+                <a href="#courses" onclick="closeNavigationMenu()"
+                    class="block py-2 text-base font-semibold text-slate-700 dark:text-slate-200 hover:text-brand-600">Courses
+                    & Batches</a>
+                <a href="#typing-zone" onclick="closeNavigationMenu()"
+                    class="block py-2 text-base font-semibold text-brand-600 dark:text-brand-400">Typing
+                    Speed Test</a>
+                <a href="#quiz-arena" onclick="closeNavigationMenu()"
+                    class="block py-2 text-base font-semibold text-purple-600 dark:text-purple-400">Quiz
+                    Simulator</a>
+                <a href="#code-lab" onclick="closeNavigationMenu()"
+                    class="block py-2 text-base font-semibold text-indigo-600 dark:text-indigo-400">Coding
+                    Playground</a>
+                <a href="#testimonials" onclick="closeNavigationMenu()"
+                    class="block py-2 text-base font-semibold text-brand-600 dark:text-brand-400">Testimonials</a>
+                <a href="#gallery-popup" onclick="closeNavigationMenu(); openGalleryPopup(); return false;"
+                    class="block py-2 text-base font-semibold text-emerald-600 dark:text-emerald-400">Gallery &amp;
+                    Achievements</a>
+                <a href="#founder" onclick="closeNavigationMenu()"
+                    class="block py-2 text-base font-semibold text-slate-700 dark:text-slate-200">Meet Our Founder</a>
+                <a href="#admission-modal"
+                    onclick="closeNavigationMenu(); toggleModal('admission-modal'); return false;"
+                    class="block py-2 text-base font-semibold text-indigo-600 dark:text-indigo-400">Admission / Enroll
+                    Now</a>
+                <a href="#contact" onclick="closeNavigationMenu()"
+                    class="block py-2 text-base font-semibold text-slate-700 dark:text-slate-200">Location & Contact</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero"
+            class="relative pt-12 pb-20 lg:pt-16 lg:pb-28 overflow-hidden bg-gradient-to-b from-indigo-50/50 via-slate-50 to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+            <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-r from-brand-500/20 via-purple-500/20 to-pink-500/20 blur-3xl rounded-full pointer-events-none -z-10 opacity-70">
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-10 items-center">
+
+                    <!-- Left Hero Content -->
+                    <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 dark:bg-brand-900/50 border border-brand-300 dark:border-brand-700/50 text-brand-700 dark:text-brand-300 text-xs sm:text-sm font-bold shadow-sm animate-pulse-slow">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                            <span>Quality Computer Education in Bhandara Town</span>
+                            <i class="fa-solid fa-certificate text-gold-500"></i>
+                        </div>
+
+                        <h1
+                            class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.15]">
+                            Shape Your Career with <br class="hidden sm:inline">
+                            <span
+                                class="bg-gradient-to-r from-brand-600 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
+                                Future-Ready Digital Skills
+                            </span>
+                        </h1>
+
+                        <p
+                            class="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Under the expert guidance of <strong>Pravin Mohabey Sir</strong>, develop industry-relevant
+                            skills in
+                            Computer Programming, Accounting & GST, Typing, and Web Design through practical, hands-on
+                            training
+                            in Bhandara.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                            <a href="#courses"
+                                class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-extrabold text-base shadow-xl shadow-brand-500/30 hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 flex items-center justify-center gap-3">
+                                <i class="fa-solid fa-graduation-cap text-xl"></i>
+                                <span>Explore All Courses</span>
+                            </a>
+
+                            <a href="https://wa.me/919021179106?text=Hello%20Pravin%20Sir,%20I%20want%20information%20about%20computer%20courses%20at%20Good%20Luck%20Computer%20Classes"
+                                target="_blank" rel="noopener noreferrer"
+                                class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base shadow-lg shadow-emerald-600/20 hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 flex items-center justify-center gap-3">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span>WhatsApp Enquiry</span>
+                            </a>
+                        </div>
+
+                        <div
+                            class="pt-6 border-t border-slate-200 dark:border-slate-800 grid grid-cols-3 gap-4 text-center lg:text-left">
+                            <div>
+                                <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">3,000+
+                                </div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Students Trained
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-2xl sm:text-3xl font-extrabold text-brand-600 dark:text-brand-400">
+                                    Since 2010</div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Providing Computer
+                                    Education in Bhandara</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl sm:text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">
+                                    3 Times</div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Awarded Best Teacher
+                                    by AICPE</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Hero Visual: YouTube Embedded Video Section (Compact & Sleek) -->
+                    <!-- Clean & Compact YouTube Video -->
+                    <div class="lg:col-span-6 flex justify-center lg:justify-end">
+                        <div class="w-full max-w-[280px] sm:max-w-[300px]
+                overflow-hidden rounded-2xl
+                bg-black shadow-xl shadow-slate-900/15
+                ring-1 ring-slate-200 dark:ring-slate-800">
+
+                            <div class="aspect-[9/16] w-full">
+                                <iframe class="block h-full w-full" src="https://www.youtube.com/embed/015NGjf5MRY"
+                                    title="Good Luck Computer Classes Video" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+                       encrypted-media; gyroscope; picture-in-picture;
+                       web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                </iframe>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- POSTERS & COURSES SECTION -->
+        <section id="posters"
+            class="py-16 bg-slate-100 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Section Heading -->
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full
+                bg-pink-100 dark:bg-pink-900/50 text-pink-600
+                dark:text-pink-300 text-xs font-bold mb-3">
+                        <i class="fa-solid fa-images"></i>
+                        Posters Gallery
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl font-extrabold
+                text-slate-900 dark:text-white">
+                        Institute Posters
+                    </h2>
+
+                    <p class="text-slate-600 dark:text-slate-400 mt-3
+                text-sm sm:text-base">
+                        Explore our computer courses, professional skills
+                        and career-oriented training programs.
+                    </p>
+                </div>
+
+                <!-- Course Posters Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- 1. IT & Programming -->
+                    <article class="glass-card rounded-2xl overflow-hidden
+                border border-slate-200 dark:border-slate-800
+                shadow-md hover:shadow-xl transition-all duration-300">
+
+                        <div class="bg-white dark:bg-slate-800 p-3">
+                            <img src="img/It&Programming.png" alt="IT and Programming Courses Poster" loading="lazy"
+                                class="w-full h-auto max-h-[420px] object-contain
+                        mx-auto rounded-lg">
+                        </div>
+
+                        <div class="p-5">
+                            <span class="text-xs font-bold text-blue-600">
+                                IT & TECHNOLOGY
+                            </span>
+                            <h3 class="font-bold text-lg text-slate-900 dark:text-white mt-1">
+                                IT & Programming
+                            </h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
+                                Build your computer knowledge and programming skills.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 2. Tally Prime & GST -->
+                    <article class="glass-card rounded-2xl overflow-hidden
+                border border-slate-200 dark:border-slate-800
+                shadow-md hover:shadow-xl transition-all duration-300">
+
+                        <div class="bg-white dark:bg-slate-800 p-3">
+                            <img src="img/Tallyprime&Gst.png" alt="Tally Prime and GST Course Poster" loading="lazy"
+                                class="w-full h-auto max-h-[420px] object-contain
+                        mx-auto rounded-lg">
+                        </div>
+
+                        <div class="p-5">
+                            <span class="text-xs font-bold text-emerald-600">
+                                ACCOUNTING
+                            </span>
+                            <h3 class="font-bold text-lg text-slate-900 dark:text-white mt-1">
+                                Tally Prime & GST
+                            </h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
+                                Learn accounting, GST and practical business entries.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 3. Design & Digital Media -->
+                    <article class="glass-card rounded-2xl overflow-hidden
+                border border-slate-200 dark:border-slate-800
+                shadow-md hover:shadow-xl transition-all duration-300">
+
+                        <div class="bg-white dark:bg-slate-800 p-3">
+                            <img src="img/Design&DigitalMedia.png" alt="Design and Digital Media Course Poster"
+                                loading="lazy" class="w-full h-auto max-h-[420px] object-contain
+                        mx-auto rounded-lg">
+                        </div>
+
+                        <div class="p-5">
+                            <span class="text-xs font-bold text-purple-600">
+                                CREATIVE SKILLS
+                            </span>
+                            <h3 class="font-bold text-lg text-slate-900 dark:text-white mt-1">
+                                Design & Digital Media
+                            </h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
+                                Explore digital design and creative computer skills.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 4. Computer & Office Courses -->
+                    <article class="glass-card rounded-2xl overflow-hidden
+                border border-slate-200 dark:border-slate-800
+                shadow-md hover:shadow-xl transition-all duration-300">
+
+                        <div class="bg-white dark:bg-slate-800 p-3">
+                            <img src="img/Comp.&OfficeCourses.png" alt="Computer and Office Courses Poster"
+                                loading="lazy" class="w-full h-auto max-h-[420px] object-contain
+                        mx-auto rounded-lg">
+                        </div>
+
+                        <div class="p-5">
+                            <span class="text-xs font-bold text-amber-600">
+                                COMPUTER EDUCATION
+                            </span>
+                            <h3 class="font-bold text-lg text-slate-900 dark:text-white mt-1">
+                                Computer & Office Courses
+                            </h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
+                                Develop everyday computer and office application skills.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 5. Hardware & Networking -->
+                    <article class="glass-card rounded-2xl overflow-hidden
+                border border-slate-200 dark:border-slate-800
+                shadow-md hover:shadow-xl transition-all duration-300">
+
+                        <div class="bg-white dark:bg-slate-800 p-3">
+                            <img src="img/Hardware&Networking.png" alt="Hardware and Networking Course Poster"
+                                loading="lazy" class="w-full h-auto max-h-[420px] object-contain
+                        mx-auto rounded-lg">
+                        </div>
+
+                        <div class="p-5">
+                            <span class="text-xs font-bold text-indigo-600">
+                                TECHNICAL SKILLS
+                            </span>
+                            <h3 class="font-bold text-lg text-slate-900 dark:text-white mt-1">
+                                Hardware & Networking
+                            </h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
+                                Learn computer hardware fundamentals and networking.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 6. Vocational & Professional Skills -->
+                    <article class="glass-card rounded-2xl overflow-hidden
+                border border-slate-200 dark:border-slate-800
+                shadow-md hover:shadow-xl transition-all duration-300">
+
+                        <div class="bg-white dark:bg-slate-800 p-3">
+                            <img src="img/Vocational&Professionalskills.png"
+                                alt="Vocational and Professional Skills Poster" loading="lazy" class="w-full h-auto max-h-[420px] object-contain
+                        mx-auto rounded-lg">
+                        </div>
+
+                        <div class="p-5">
+                            <span class="text-xs font-bold text-cyan-600">
+                                CAREER DEVELOPMENT
+                            </span>
+                            <h3 class="font-bold text-lg text-slate-900 dark:text-white mt-1">
+                                Vocational & Professional Skills
+                            </h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
+                                Explore practical and job-oriented skill development.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Smart Course Pathfinder Quiz -->
+        <section class="py-12 bg-brand-900 text-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-5 space-y-3">
+                        <span class="text-xs font-bold text-brand-300 uppercase tracking-widest"><i
+                                class="fa-solid fa-compass mr-1"></i> Career Finder Tool</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold">Which Course is Right For You?</h2>
+                        <p class="text-slate-300 text-sm">Select your goal below and our smart wizard will match the
+                            best program, exam duration, and certification required for your success in Bhandara.</p>
+                    </div>
+
+                    <div
+                        class="lg:col-span-7 bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10 shadow-2xl">
+                        <div id="pathfinder-step-1" class="space-y-3">
+                            <label class="block text-sm font-bold text-brand-200">Step 1: What is your primary career
+                                goal?</label>
+                            <div class="grid sm:grid-cols-3 gap-3">
+                                <button onclick="selectPathGoal('gov')"
+                                    class="path-btn p-3 rounded-xl border border-white/20 hover:bg-brand-600 text-left text-xs font-semibold transition-all">
+                                    <i class="fa-solid fa-landmark text-lg block mb-1 text-amber-400"></i> Government
+                                    Job (MPSC/Clerk)
+                                </button>
+                                <button onclick="selectPathGoal('coding')"
+                                    class="path-btn p-3 rounded-xl border border-white/20 hover:bg-brand-600 text-left text-xs font-semibold transition-all">
+                                    <i class="fa-solid fa-code text-lg block mb-1 text-emerald-400"></i> Software
+                                    Developer / IT
+                                </button>
+                                <button onclick="selectPathGoal('business')"
+                                    class="path-btn p-3 rounded-xl border border-white/20 hover:bg-brand-600 text-left text-xs font-semibold transition-all">
+                                    <i class="fa-solid fa-chart-line text-lg block mb-1 text-purple-400"></i> Accounting
+                                    & Business
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="pathfinder-result" class="hidden mt-4 pt-4 border-t border-white/20">
+                            <div class="flex items-start gap-4">
+                                <div id="path-icon"
+                                    class="w-12 h-12 rounded-xl bg-brand-500 flex items-center justify-center text-xl shrink-0">
+                                </div>
+                                <div>
+                                    <div class="text-xs text-brand-300 uppercase font-bold">Recommended Combination
+                                    </div>
+                                    <h3 id="path-title" class="text-lg font-bold text-white"></h3>
+                                    <p id="path-desc" class="text-xs text-slate-300 mt-1"></p>
+                                    <div class="mt-3 flex gap-3">
+                                        <a href="#courses"
+                                            class="px-4 py-1.5 rounded-lg bg-white text-brand-900 text-xs font-bold hover:bg-brand-100">View
+                                            Course Details</a>
+                                        <a href="https://wa.me/919021179106" target="_blank"
+                                            class="px-4 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold hover:bg-emerald-600">Ask
+                                            Pravin Sir on WhatsApp</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REAL & ACCURATE Typing Zone Section (+ SCORING INTEGRATION) -->
+        <section id="typing-zone"
+            class="py-20 bg-slate-100 dark:bg-slate-900/60 border-y border-slate-200 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900/50 text-brand-600 dark:text-brand-300 text-xs font-bold mb-3">
+                        <i class="fa-solid fa-keyboard"></i> Typing Speed Practice Module
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                        Accurate Live Typing Speed Test
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm sm:text-base">
+                        Simulate official Government Typing Typing Exam conditions. Real key detection, character
+                        accuracy, and score points awarded upon completion!
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white dark:bg-slate-950 rounded-3xl p-6 lg:p-8 shadow-xl border border-slate-200 dark:border-slate-800">
+
+                    <!-- Controls Bar -->
+                    <div
+                        class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-200 dark:border-slate-800">
+
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Difficulty:</span>
+                            <div
+                                class="inline-flex p-1 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-semibold">
+                                <button onclick="setTypingLevel('easy')" id="btn-lvl-easy"
+                                    class="px-3 py-1.5 rounded-lg bg-brand-600 text-white transition-all">Easy (30
+                                    WPM)</button>
+                                <button onclick="setTypingLevel('medium')" id="btn-lvl-medium"
+                                    class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-brand-500 transition-all">Medium
+                                    (40 WPM)</button>
+                                <button onclick="setTypingLevel('hard')" id="btn-lvl-hard"
+                                    class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 hover:text-brand-500 transition-all">Hard
+                                    (Typing Passages)</button>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Language:</span>
+                            <select id="typing-lang" onchange="resetTypingTest()"
+                                class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-xl px-3 py-2 border-0 focus:ring-2 focus:ring-brand-500 font-semibold">
+                                <option value="eng">English Typing</option>
+                                <option value="mar">Marathi (Kruti Dev / Mangal)</option>
+                            </select>
+                        </div>
+
+                        <div class="flex items-center gap-6">
+                            <div class="text-center">
+                                <div class="text-xs text-slate-400 font-medium">Time Left</div>
+                                <div id="typing-timer"
+                                    class="text-xl font-bold font-code text-brand-600 dark:text-brand-400">60s</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-xs text-slate-400 font-medium">Speed</div>
+                                <div id="typing-wpm"
+                                    class="text-xl font-bold font-code text-emerald-600 dark:text-emerald-400">0 WPM
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-xs text-slate-400 font-medium">Accuracy</div>
+                                <div id="typing-accuracy"
+                                    class="text-xl font-bold font-code text-purple-600 dark:text-purple-400">100%</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Typing Display Text Area -->
+                    <div id="typing-text-display"
+                        class="font-code text-base sm:text-lg leading-relaxed p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 max-h-48 overflow-y-auto mb-6 select-none custom-scrollbar">
+                    </div>
+
+                    <!-- User Typing Input Area -->
+                    <div class="relative">
+                        <textarea id="typing-input" rows="3" disabled
+                            placeholder="Click 'Start Speed Test' button below to begin..."
+                            class="w-full font-code text-base sm:text-lg p-4 rounded-2xl bg-white dark:bg-slate-900 text-slate-900 dark:text-white border-2 border-slate-300 dark:border-slate-700 focus:border-brand-500 focus:ring-0 outline-none transition-all resize-none shadow-inner"></textarea>
+                    </div>
+
+                    <!-- Action Buttons & Virtual Keyboard Toggle -->
+                    <div class="mt-6 flex flex-wrap items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <button id="start-typing-btn" onclick="startTypingTest()"
+                                class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-sm shadow-md shadow-brand-500/30 flex items-center gap-2">
+                                <i class="fa-solid fa-play"></i> Start Speed Test
+                            </button>
+                            <button onclick="resetTypingTest()"
+                                class="px-5 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 font-bold text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-rotate-right"></i> Reset
+                            </button>
+                        </div>
+
+                        <div id="typing-feedback-badge"
+                            class="hidden text-xs font-bold px-4 py-2 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300">
+                            <i class="fa-solid fa-circle-check mr-1"></i> Typing Speed Standard Qualified! (+50 Points
+                            Earned)
+                        </div>
+                    </div>
+
+                    <!-- Virtual Keyboard Visualizer -->
+                    <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800">
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 text-center">
+                            Interactive On-Screen Key Guide</div>
+                        <div class="flex flex-col items-center gap-1.5 font-code text-xs max-w-2xl mx-auto opacity-80"
+                            id="virtual-keyboard">
+                            <div class="flex gap-1" id="kbd-row-1">
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="q">Q</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="w">W</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="e">E</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="r">R</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="t">T</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="y">Y</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="u">U</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="i">I</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="o">O</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="p">P</span>
+                            </div>
+                            <div class="flex gap-1" id="kbd-row-2">
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="a">A</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="s">S</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="d">D</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="f">F</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="g">G</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="h">H</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="j">J</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="k">K</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="l">L</span>
+                            </div>
+                            <div class="flex gap-1" id="kbd-row-3">
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="z">Z</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="x">X</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="c">C</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="v">V</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="b">B</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="n">N</span>
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-3 py-2 rounded shadow-sm text-center min-w-[28px]"
+                                    data-key="m">M</span>
+                            </div>
+                            <div class="w-full flex justify-center mt-1">
+                                <span
+                                    class="key-cap bg-slate-200 dark:bg-slate-800 px-12 py-1.5 rounded shadow-sm text-center text-[10px]"
+                                    data-key=" ">SPACE BAR</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- RANDOM 25 Quiz Arena Section -->
+        <section id="quiz-arena" class="py-20 bg-slate-50 dark:bg-slate-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-300 text-xs font-bold mb-3">
+                        <i class="fa-solid fa-graduation-cap"></i>Practice Test
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                        Random Test Simulator (25 Questions)
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm sm:text-base">
+                        Attempt all 25 questions in this practice test! Earn +10 Points for each correct answer.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8 items-start">
+
+                    <!-- Quiz Box -->
+                    <div
+                        class="lg:col-span-8 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200 dark:border-slate-800">
+
+                        <div
+                            class="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider"
+                                id="quiz-question-counter">Question 1 of 25</span>
+                            <span
+                                class="px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-300 text-xs font-bold"
+                                id="quiz-topic-tag">Randomized Exam Mode</span>
+                        </div>
+
+                        <h3 id="quiz-question-text"
+                            class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-6">
+                            Loading Practice Questions...
+                        </h3>
+
+                        <!-- Options Container -->
+                        <div id="quiz-options" class="space-y-3 mb-6">
+                            <!-- Injected by JS -->
+                        </div>
+
+                        <!-- Instant Answer Explanation Box -->
+                        <div id="quiz-explanation"
+                            class="hidden p-4 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-300 mb-6">
+                            <strong><i class="fa-solid fa-lightbulb text-amber-500 mr-1"></i> Sir's Tip:</strong> <span
+                                id="quiz-explanation-text"></span>
+                        </div>
+
+                        <div
+                            class="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-800">
+                            <button onclick="nextquizQuestion()" id="next-q-btn"
+                                class="px-6 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-sm ml-auto shadow-md shadow-purple-500/20">
+                                Next Question <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Stats & Score Sidebar -->
+                    <div class="lg:col-span-4 space-y-6">
+                        <div
+                            class="bg-gradient-to-br from-purple-900 via-indigo-900 to-slate-900 text-white rounded-3xl p-6 shadow-xl border border-purple-500/20">
+                            <h4 class="text-base font-bold mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-trophy text-gold-400"></i> Your Scorecard
+                            </h4>
+
+                            <div class="grid grid-cols-2 gap-4 mb-6 text-center">
+                                <div class="bg-white/10 rounded-2xl p-4">
+                                    <div class="text-3xl font-extrabold text-emerald-400" id="quiz-score">0</div>
+                                    <div class="text-[10px] text-slate-300 uppercase tracking-wider mt-1">Correct
+                                        Answers</div>
+                                </div>
+                                <div class="bg-white/10 rounded-2xl p-4">
+                                    <div class="text-3xl font-extrabold text-purple-300" id="quiz-total-tried">0</div>
+                                    <div class="text-[10px] text-slate-300 uppercase tracking-wider mt-1">Questions
+                                        Attempted</div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="p-4 rounded-2xl bg-white/5 border border-white/10 text-xs text-slate-300 space-y-2">
+                                <div class="flex items-center justify-between">
+                                    <span>Pass Standard Target:</span>
+                                    <span class="font-bold text-white">40 / 100 Marks</span>
+                                </div>
+                                <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                                    <div id="quiz-progress-bar"
+                                        class="bg-emerald-400 h-full w-0 transition-all duration-300"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Coding Lab & Playground Section - Demo Only -->
+        <section id="code-lab"
+            class="py-20 bg-slate-100 dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center max-w-3xl mx-auto mb-12">
+
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-300 text-xs font-bold mb-3">
+                        <i class="fa-solid fa-terminal"></i>
+                        Demo Coding Terminal
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                        Programming & Web Code Lab
+                    </h2>
+
+                    <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm sm:text-base">
+                        Explore sample HTML, C++ and Python code in this
+                        interactive coding demonstration.
+                    </p>
+
+                    <p
+                        class="text-xs text-amber-700 dark:text-amber-300 mt-4 inline-flex items-center gap-2 bg-amber-100 dark:bg-amber-900/30 px-4 py-2 rounded-xl">
+                        <i class="fa-solid fa-circle-info"></i>
+                        This terminal is for demonstration purposes only.
+                        It is not a full programming compiler.
+                    </p>
+
+                </div>
+
+                <div
+                    class="bg-slate-950 rounded-3xl overflow-hidden shadow-2xl border border-slate-800 grid lg:grid-cols-2">
+
+                    <!-- Code Editor -->
+                    <div class="p-6 border-b lg:border-b-0 lg:border-r border-slate-800 flex flex-col">
+
+                        <div
+                            class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-800 mb-4">
+
+                            <span class="text-xs font-bold text-slate-400 uppercase">
+                                <i class="fa-solid fa-code mr-1"></i>
+                                Sample Code
+                            </span>
+
+                            <select id="code-template-select" onchange="loadCodeTemplate()"
+                                class="bg-slate-900 text-emerald-400 text-xs rounded-lg px-3 py-2 border border-slate-800 focus:outline-none">
+
+                                <option value="html">HTML & CSS Demo</option>
+                                <option value="cpp">C++ Demo Code</option>
+                                <option value="python">Python Demo Code</option>
+
+                            </select>
+
+                        </div>
+
+                        <textarea id="code-editor-input" rows="14" spellcheck="false" aria-label="Demo code editor"
+                            class="w-full flex-1 font-mono text-xs sm:text-sm p-4 rounded-xl bg-slate-900 text-emerald-300 border border-slate-800 focus:outline-none focus:border-emerald-500 resize-y leading-relaxed"
+                            placeholder="Sample code will appear here..."></textarea>
+
+                        <div class="mt-4 flex flex-wrap items-center gap-3">
+
+                            <button type="button" onclick="runCodePlayground()"
+                                class="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center gap-2 transition">
+                                <i class="fa-solid fa-play"></i>
+                                Run Demo Preview
+                            </button>
+
+                            <span class="text-[11px] text-slate-500">
+                                <i class="fa-solid fa-flask mr-1"></i>
+                                Educational demonstration only
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Terminal / Output -->
+                    <div class="p-6 bg-slate-900 flex flex-col">
+
+                        <div
+                            class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-800 mb-4">
+
+                            <span class="text-xs font-bold text-slate-400 uppercase">
+                                <i class="fa-solid fa-terminal mr-1"></i>
+                                Demo Output Terminal
+                            </span>
+
+                            <button type="button" onclick="clearCodeOutput()"
+                                class="text-xs text-slate-400 hover:text-white transition">
+                                <i class="fa-solid fa-trash mr-1"></i>
+                                Clear Output
+                            </button>
+
+                        </div>
+
+                        <div id="code-output-frame-container"
+                            class="flex-1 rounded-xl bg-white p-4 border border-slate-800 min-h-[280px] overflow-auto font-mono text-xs text-slate-800">
+
+                            <div class="text-slate-500 text-center py-16">
+                                <i class="fa-solid fa-terminal text-3xl mb-4"></i>
+                                <p>Welcome to the Demo Coding Terminal</p>
+                                <p class="mt-2">Select a template and click Run Demo Preview.</p>
+                            </div>
+
+                        </div>
+
+                        <p class="text-[10px] text-slate-500 mt-3">
+                            Note: HTML can be previewed in the browser. C++ and Python
+                            require a compatible compiler or runtime for actual execution.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= COURSES SECTION START ================= -->
+        <section id="courses" class="py-20 bg-slate-50 dark:bg-slate-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full
+                bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700
+                dark:text-indigo-300 text-xs font-bold mb-4">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        CAREER-FOCUSED TRAINING
+                    </span>
+
+                    <h2 class="text-3xl sm:text-4xl font-extrabold
+                text-slate-900 dark:text-white">
+                        Explore Our Professional Courses
+                    </h2>
+
+                    <p class="mt-4 text-sm sm:text-base leading-7
+                text-slate-600 dark:text-slate-400">
+                        Build practical skills, gain industry-relevant knowledge
+                        and take the next step towards your career with Good Luck
+                        Computer & Technical Institute, Bhandara.
+                    </p>
+                </div>
+
+                <!-- CATEGORY VIEW -->
+                <div id="category-view">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">
+                        <i class="fa-solid fa-layer-group text-indigo-500 mr-2"></i>
+                        Browse Courses by Category
+                    </h3>
+
+                    <div id="category-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                        <!-- Categories are generated by JavaScript -->
+
+                    </div>
+                </div>
+
+                <!-- COURSE LIST VIEW -->
+                <div id="course-list-view" class="hidden">
+
+                    <button onclick="showCategories()" class="mb-6 inline-flex items-center gap-2 text-sm font-bold
+                text-indigo-600 dark:text-indigo-400 hover:underline">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        All Categories
+                    </button>
+
+                    <div class="mb-7">
+                        <h3 id="selected-category-title" class="text-2xl font-extrabold text-slate-900 dark:text-white">
+                        </h3>
+
+                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+                            Select a course to explore its overview, syllabus and
+                            practical learning outcomes.
+                        </p>
+                    </div>
+
+                    <div id="course-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    </div>
+                </div>
+
+                <!-- COURSE DETAILS VIEW -->
+                <div id="course-detail-view" class="hidden">
+
+                    <button onclick="backToCourses()" class="mb-6 inline-flex items-center gap-2 text-sm font-bold
+                text-indigo-600 dark:text-indigo-400 hover:underline">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Back to Courses
+                    </button>
+
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden
+                border border-slate-200 dark:border-slate-800 shadow-xl">
+
+                        <div class="p-7 sm:p-10 bg-gradient-to-br
+                    from-indigo-600 to-purple-700 text-white">
+
+                            <span id="detail-category" class="text-xs uppercase tracking-widest font-bold
+                        text-indigo-100">
+                            </span>
+
+                            <h3 id="detail-title" class="text-3xl sm:text-4xl font-extrabold mt-3">
+                            </h3>
+
+                            <p id="detail-duration" class="mt-4 text-sm font-semibold text-indigo-100">
+                            </p>
+
+                            <p id="detail-short" class="mt-4 text-sm sm:text-base leading-7 text-white/90">
+                            </p>
+
+                            <button onclick="openAdmissionForm()" class="mt-7 px-6 py-3 rounded-xl bg-white
+                        text-indigo-700 font-extrabold text-sm
+                        hover:bg-indigo-50 transition">
+                                Enquire About This Course
+                                <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+
+                        <div class="grid lg:grid-cols-3 gap-8 p-7 sm:p-10">
+
+                            <div class="lg:col-span-2">
+
+                                <h4 class="text-xl font-extrabold text-slate-900
+                            dark:text-white mb-3">
+                                    About This Course
+                                </h4>
+
+                                <p id="detail-overview" class="text-sm leading-7 text-slate-600
+                            dark:text-slate-300">
+                                </p>
+
+                                <div
+                                    class="mb-6 rounded-xl border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-900/20 p-4 text-sm text-emerald-800 dark:text-emerald-200">
+                                    <i class="fa-solid fa-certificate mr-2"></i><strong>Course Completion
+                                        Certificate:</strong> Students who successfully complete this course will
+                                    receive a certificate from the institute.
+                                </div>
+
+                                <h4 class="text-xl font-extrabold text-slate-900
+                            dark:text-white mt-8 mb-4">
+                                    What You Will Learn
+                                </h4>
+
+                                <ul id="detail-syllabus" class="space-y-3 text-sm text-slate-600
+                            dark:text-slate-300">
+                                </ul>
+
+                                <h4 class="text-xl font-extrabold text-slate-900
+                            dark:text-white mt-8 mb-4">
+                                    Practical Learning Outcomes
+                                </h4>
+
+                                <p id="detail-outcomes" class="text-sm leading-7 text-slate-600
+                            dark:text-slate-300">
+                                </p>
+                            </div>
+
+                            <div>
+                                <div class="rounded-2xl p-6 bg-slate-50
+                            dark:bg-slate-800 border border-slate-200
+                            dark:border-slate-700">
+
+                                    <i class="fa-solid fa-user-graduate text-3xl
+                                text-indigo-500"></i>
+
+                                    <h4 class="text-lg font-extrabold mt-4
+                                text-slate-900 dark:text-white">
+                                        Ready to Get Started?
+                                    </h4>
+
+                                    <p class="text-sm leading-6 mt-3
+                                text-slate-600 dark:text-slate-300">
+                                        Contact our institute to discuss batch
+                                        timings, fees, eligibility and admission.
+                                    </p>
+
+                                    <button onclick="openAdmissionForm()" class="w-full mt-5 py-3 rounded-xl
+                                bg-indigo-600 hover:bg-indigo-700
+                                text-white text-sm font-bold">
+                                        <i class="fa-brands fa-whatsapp mr-2"></i>
+                                        Enquire Now
+                                    </button>
+
+                                    <p class="text-xs mt-4 text-slate-500
+                                dark:text-slate-400">
+                                        Our team will help you choose the right course.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= ADMISSION FORM MODAL ================= -->
+        <div id="admission-modal" class="hidden fixed inset-0 z-[9999] bg-slate-950/70 backdrop-blur-sm
+    overflow-y-auto overscroll-contain p-3 sm:p-5">
+
+            <div class="min-h-full flex items-start sm:items-center justify-center w-full min-w-0 py-2">
+
+                <div class="relative w-full min-w-0 max-w-xl max-h-[calc(100dvh-2rem)] box-border
+            overflow-x-hidden overflow-y-auto bg-white dark:bg-slate-900
+            rounded-2xl shadow-2xl border border-slate-200
+            dark:border-slate-700 p-4 sm:p-6">
+
+                    <!-- Close Button -->
+                    <button type="button" onclick="closeAdmissionForm()" class="absolute top-3 right-3 w-9 h-9 rounded-full
+                bg-slate-100 dark:bg-slate-800 text-slate-600
+                dark:text-white hover:bg-red-100 hover:text-red-600
+                flex items-center justify-center" aria-label="Close admission form">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+
+                    <span class="text-xs font-bold uppercase tracking-widest
+                text-indigo-600 dark:text-indigo-400">
+                        ADMISSION ENQUIRY
+                    </span>
+
+                    <h3 class="text-xl sm:text-2xl font-extrabold mt-2 pr-8
+                text-slate-900 dark:text-white">
+                        Start Your Learning Journey
+                    </h3>
+
+                    <p class="text-sm leading-5 mt-1 mb-5 text-slate-500
+                dark:text-slate-400">
+                        Fill in your details and continue to WhatsApp to send
+                        your enquiry directly to our institute.
+                    </p>
+
+                    <form id="student-enquiry-form" class="space-y-3">
+
+                        <!-- Student Name -->
+                        <div>
+                            <label for="student-name" class="block text-sm font-bold mb-1
+                        text-slate-700 dark:text-slate-300">
+                                Student Full Name *
+                            </label>
+
+                            <input id="student-name" name="studentName" type="text" required maxlength="100"
+                                autocomplete="name" placeholder="Enter your full name" class="w-full p-2.5 rounded-lg border border-slate-300
+                        dark:border-slate-700 bg-slate-50 dark:bg-slate-800
+                        text-slate-900 dark:text-white outline-none
+                        focus:ring-2 focus:ring-indigo-500">
+                        </div>
+
+                        <!-- Phone & City -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+                            <div>
+                                <label for="student-phone" class="block text-sm font-bold mb-1
+                            text-slate-700 dark:text-slate-300">
+                                    Mobile Number *
+                                </label>
+
+                                <input id="student-phone" name="phone" type="tel" required maxlength="10"
+                                    inputmode="numeric" autocomplete="tel" pattern="[0-9]{10}"
+                                    placeholder="Enter 10-digit mobile number" class="w-full p-2.5 rounded-lg border
+                            border-slate-300 dark:border-slate-700
+                            bg-slate-50 dark:bg-slate-800
+                            text-slate-900 dark:text-white outline-none
+                            focus:ring-2 focus:ring-indigo-500">
+                            </div>
+
+                            <div>
+                                <label for="student-city" class="block text-sm font-bold mb-1
+                            text-slate-700 dark:text-slate-300">
+                                    City / Town *
+                                </label>
+
+                                <input id="student-city" name="city" type="text" required maxlength="100"
+                                    autocomplete="address-level2" placeholder="Enter your city" class="w-full p-2.5 rounded-lg border
+                            border-slate-300 dark:border-slate-700
+                            bg-slate-50 dark:bg-slate-800
+                            text-slate-900 dark:text-white outline-none
+                            focus:ring-2 focus:ring-indigo-500">
+                            </div>
+
+                        </div>
+
+                        <!-- Course Category -->
+                        <div>
+                            <label for="student-category" class="block text-sm font-bold mb-1
+                        text-slate-700 dark:text-slate-300">
+                                Course Category *
+                            </label>
+
+                            <select id="student-category" name="category" required class="w-full p-2.5 rounded-lg border
+                        border-slate-300 dark:border-slate-700
+                        bg-slate-50 dark:bg-slate-800
+                        text-slate-900 dark:text-white outline-none
+                        focus:ring-2 focus:ring-indigo-500">
+
+                                <option value="">Select Course Category</option>
+                                <option value="programming">IT &amp; Programming</option>
+                                <option value="accounting">Accounting &amp; Finance</option>
+                                <option value="design">Design &amp; Digital Media</option>
+                                <option value="computer">Computer &amp; Office Courses</option>
+                                <option value="hardware">Hardware &amp; Networking</option>
+                                <option value="vocational">Vocational &amp; Professional Skills</option>
+                            </select>
+                        </div>
+
+                        <!-- Interested Course -->
+                        <div>
+                            <label for="student-course" class="block text-sm font-bold mb-1
+                        text-slate-700 dark:text-slate-300">
+                                Interested Course *
+                            </label>
+
+                            <select id="student-course" name="course" required disabled class="w-full p-2.5 rounded-lg border
+                        border-slate-300 dark:border-slate-700
+                        bg-slate-50 dark:bg-slate-800
+                        text-slate-900 dark:text-white outline-none
+                        focus:ring-2 focus:ring-indigo-500
+                        disabled:opacity-60">
+
+                                <option value="">First select a course category</option>
+                            </select>
+                        </div>
+
+                        <!-- Education -->
+                        <div>
+                            <label for="student-education" class="block text-sm font-bold mb-1
+                        text-slate-700 dark:text-slate-300">
+                                Current Education
+                            </label>
+
+                            <select id="student-education" name="education" class="w-full p-2.5 rounded-lg border
+                        border-slate-300 dark:border-slate-700
+                        bg-slate-50 dark:bg-slate-800
+                        text-slate-900 dark:text-white">
+
+                                <option value="">Select your education</option>
+                                <option>School Student</option>
+                                <option>12th Pass</option>
+                                <option>Graduate</option>
+                                <option>Undergraduate</option>
+                                <option>Diploma / Polytechnic</option>
+                                <option>Working Professional</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Optional Message -->
+                        <div>
+                            <label for="student-message" class="block text-sm font-bold mb-1
+                        text-slate-700 dark:text-slate-300">
+                                Your Question (Optional)
+                            </label>
+
+                            <textarea id="student-message" name="message" rows="2" maxlength="1000"
+                                placeholder="Ask about fees, batches, duration or syllabus..." class="w-full p-2.5 rounded-lg border
+                        border-slate-300 dark:border-slate-700
+                        bg-slate-50 dark:bg-slate-800
+                        text-slate-900 dark:text-white outline-none
+                        focus:ring-2 focus:ring-indigo-500"></textarea>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="submit" class="w-full py-3 rounded-xl bg-green-600
+                    hover:bg-green-700 text-white font-extrabold
+                    transition-colors">
+                            <i class="fa-brands fa-whatsapp text-lg mr-2"></i>
+                            Submit Enquiry on WhatsApp
+                        </button>
+
+                        <p class="text-xs text-center leading-4
+                    text-slate-500 dark:text-slate-400">
+                            WhatsApp will open with your enquiry message.
+                            You must press Send in WhatsApp to deliver it.
+                        </p>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- =========================
+     ABOUT OUR INSTITUTE
+========================= -->
+        <section id="about-institute" class="relative overflow-hidden bg-slate-50 py-20 dark:bg-slate-950">
+
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+                <!-- Section Heading -->
+                <div class="mx-auto mb-14 max-w-3xl text-center">
+
+                    <span class="inline-flex items-center gap-2 rounded-full
+                bg-indigo-100 px-4 py-2 text-xs font-bold uppercase
+                tracking-wider text-indigo-700 dark:bg-indigo-500/10
+                dark:text-indigo-300">
+                        <i class="fa-solid fa-building-columns"></i>
+                        About Our Institute
+                    </span>
+
+                    <h2 class="mt-5 text-3xl font-extrabold tracking-tight
+                text-slate-900 dark:text-white sm:text-4xl lg:text-5xl">
+                        Building Skills. Creating Opportunities.
+                    </h2>
+
+                    <p class="mt-5 text-base leading-8 text-slate-600
+                dark:text-slate-400 sm:text-lg">
+                        Welcome to Good Luck Computer Classes, Bhandara —
+                        a place focused on practical computer education,
+                        digital skills and career-oriented learning.
+                    </p>
+                </div>
+
+                <!-- Institute Information -->
+                <div class="grid items-stretch gap-8 lg:grid-cols-2">
+
+                    <!-- About Content -->
+                    <div class="flex flex-col justify-center rounded-3xl
+                border border-slate-200 bg-white p-7 shadow-sm
+                dark:border-slate-800 dark:bg-slate-900 sm:p-10">
+
+                        <div class="mb-5 flex h-14 w-14 items-center justify-center
+                    rounded-2xl bg-indigo-100 text-indigo-700
+                    dark:bg-indigo-500/10 dark:text-indigo-300">
+                            <i class="fa-solid fa-graduation-cap text-2xl"></i>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">
+                            Learn Today, Grow Tomorrow
+                        </h3>
+
+                        <p class="mt-4 leading-8 text-slate-600 dark:text-slate-400">
+                            Good Luck Computer Classes helps students develop
+                            practical computer knowledge through structured
+                            learning and hands-on practice. Our aim is to make
+                            computer education accessible and useful for students,
+                            job seekers and aspiring professionals.
+                        </p>
+
+                        <p class="mt-4 leading-8 text-slate-600 dark:text-slate-400">
+                            From basic computer education to programming,
+                            accounting, office applications and technical skills,
+                            students can explore courses according to their
+                            learning and career goals.
+                        </p>
+
+                        <div class="mt-7 flex flex-wrap gap-3">
+
+                            <a href="#courses" class="inline-flex items-center gap-2 rounded-xl
+                        bg-indigo-600 px-5 py-3 text-sm font-bold text-white
+                        shadow-md transition hover:-translate-y-0.5
+                        hover:bg-indigo-500">
+                                Explore Courses
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                            <a href="tel:+919021179106" class="inline-flex items-center gap-2 rounded-xl
+                        border border-slate-300 px-5 py-3 text-sm font-bold
+                        text-slate-700 transition hover:bg-slate-100
+                        dark:border-slate-700 dark:text-slate-200
+                        dark:hover:bg-slate-800">
+                                <i class="fa-solid fa-phone"></i>
+                                Contact Us
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <!-- Institute Highlights -->
+                    <div class="grid gap-4 sm:grid-cols-2">
+
+                        <div class="rounded-2xl border border-slate-200
+                    bg-white p-6 transition duration-300
+                    hover:-translate-y-1 hover:shadow-lg
+                    dark:border-slate-800 dark:bg-slate-900">
+
+                            <div class="mb-4 flex h-12 w-12 items-center
+                        justify-center rounded-xl bg-blue-100
+                        text-blue-700 dark:bg-blue-500/10
+                        dark:text-blue-300">
+                                <i class="fa-solid fa-laptop-code text-xl"></i>
+                            </div>
+
+                            <h3 class="font-bold text-slate-900 dark:text-white">
+                                Practical Learning
+                            </h3>
+
+                            <p class="mt-2 text-sm leading-6 text-slate-600
+                        dark:text-slate-400">
+                                Hands-on computer practice to strengthen
+                                real-world skills.
+                            </p>
+                        </div>
+
+                        <div class="rounded-2xl border border-slate-200
+                    bg-white p-6 transition duration-300
+                    hover:-translate-y-1 hover:shadow-lg
+                    dark:border-slate-800 dark:bg-slate-900">
+
+                            <div class="mb-4 flex h-12 w-12 items-center
+                        justify-center rounded-xl bg-emerald-100
+                        text-emerald-700 dark:bg-emerald-500/10
+                        dark:text-emerald-300">
+                                <i class="fa-solid fa-book-open text-xl"></i>
+                            </div>
+
+                            <h3 class="font-bold text-slate-900 dark:text-white">
+                                Multiple Courses
+                            </h3>
+
+                            <p class="mt-2 text-sm leading-6 text-slate-600
+                        dark:text-slate-400">
+                                Computer, accounting, programming and
+                                professional skill courses.
+                            </p>
+                        </div>
+
+                        <div class="rounded-2xl border border-slate-200
+                    bg-white p-6 transition duration-300
+                    hover:-translate-y-1 hover:shadow-lg
+                    dark:border-slate-800 dark:bg-slate-900">
+
+                            <div class="mb-4 flex h-12 w-12 items-center
+                        justify-center rounded-xl bg-purple-100
+                        text-purple-700 dark:bg-purple-500/10
+                        dark:text-purple-300">
+                                <i class="fa-solid fa-user-graduate text-xl"></i>
+                            </div>
+
+                            <h3 class="font-bold text-slate-900 dark:text-white">
+                                Student Guidance
+                            </h3>
+
+                            <p class="mt-2 text-sm leading-6 text-slate-600
+                        dark:text-slate-400">
+                                Guidance to help learners improve their
+                                understanding and confidence.
+                            </p>
+                        </div>
+
+                        <div class="rounded-2xl border border-slate-200
+                    bg-white p-6 transition duration-300
+                    hover:-translate-y-1 hover:shadow-lg
+                    dark:border-slate-800 dark:bg-slate-900">
+
+                            <div class="mb-4 flex h-12 w-12 items-center
+                        justify-center rounded-xl bg-amber-100
+                        text-amber-700 dark:bg-amber-500/10
+                        dark:text-amber-300">
+                                <i class="fa-solid fa-location-dot text-xl"></i>
+                            </div>
+
+                            <h3 class="font-bold text-slate-900 dark:text-white">
+                                Convenient Location
+                            </h3>
+
+                            <p class="mt-2 text-sm leading-6 text-slate-600
+                        dark:text-slate-400">
+                                Located near Muslim Library Square,
+                                Bhandara.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Achievements -->
+                <div class="mt-12 rounded-3xl border border-indigo-100
+            bg-gradient-to-br from-indigo-50 to-white p-7
+            dark:border-indigo-500/20 dark:from-indigo-950/40
+            dark:to-slate-900 sm:p-10">
+
+                    <div class="grid items-center gap-8 md:grid-cols-2">
+
+                        <div>
+                            <span class="text-xs font-bold uppercase
+                        tracking-widest text-indigo-600 dark:text-indigo-300">
+                                Our Commitment
+                            </span>
+
+                            <h3 class="mt-3 text-2xl font-extrabold
+                        text-slate-900 dark:text-white sm:text-3xl">
+                                Focused on Student Progress
+                            </h3>
+
+                            <p class="mt-4 leading-7 text-slate-600
+                        dark:text-slate-400">
+                                We encourage regular practice, concept clarity
+                                and continuous improvement so students can
+                                confidently apply their skills.
+                            </p>
+                        </div>
+
+                        <div class="grid gap-4 sm:grid-cols-2">
+
+                            <div class="rounded-2xl bg-white p-5 shadow-sm
+                        dark:bg-slate-900">
+                                <i class="fa-solid fa-bullseye text-2xl
+                            text-indigo-600 dark:text-indigo-300"></i>
+                                <h4 class="mt-3 font-bold text-slate-900
+                            dark:text-white">
+                                    Skill Development
+                                </h4>
+                                <p class="mt-2 text-sm text-slate-600
+                            dark:text-slate-400">
+                                    Learning focused on practical abilities.
+                                </p>
+                            </div>
+
+                            <div class="rounded-2xl bg-white p-5 shadow-sm
+                        dark:bg-slate-900">
+                                <i class="fa-solid fa-award text-2xl
+                            text-amber-500"></i>
+                                <h4 class="mt-3 font-bold text-slate-900
+                            dark:text-white">
+                                    Achievement Focus
+                                </h4>
+                                <p class="mt-2 text-sm text-slate-600
+                            dark:text-slate-400">
+                                    Encouraging learners to work toward
+                                    their academic goals.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <p class="mt-6 border-t border-indigo-200 pt-4 text-xs
+                text-slate-500 dark:border-slate-700 dark:text-slate-400">
+                        Add verified student results, certificates, awards
+                        and placement details here when available.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+     MEET OUR FOUNDER
+========================= -->
+        <section id="founder" class="relative overflow-hidden bg-slate-950 py-20 text-white">
+
+            <!-- Background Decoration -->
+            <div class="pointer-events-none absolute -left-32 top-10
+        h-72 w-72 rounded-full bg-indigo-600/10 blur-3xl"></div>
+
+            <div class="pointer-events-none absolute -right-32 bottom-0
+        h-72 w-72 rounded-full bg-purple-600/10 blur-3xl"></div>
+
+            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+                <!-- Heading -->
+                <div class="mx-auto mb-14 max-w-3xl text-center">
+
+                    <span class="inline-flex items-center gap-2 rounded-full
+                border border-indigo-400/20 bg-indigo-400/10
+                px-4 py-2 text-xs font-bold uppercase tracking-widest
+                text-indigo-300">
+                        <i class="fa-solid fa-user-tie"></i>
+                        Meet Our Founder
+                    </span>
+
+                    <h2 class="mt-5 text-3xl font-extrabold sm:text-4xl lg:text-5xl">
+                        Guidance That Inspires Growth
+                    </h2>
+
+                    <p class="mt-4 leading-7 text-slate-400">
+                        Get to know the person behind Good Luck Computer Classes.
+                    </p>
+                </div>
+
+                <!-- Founder Profile -->
+                <div class="grid items-center gap-12 lg:grid-cols-5 lg:gap-16">
+
+                    <!-- Circular Founder Photo -->
+                    <div class="lg:col-span-2">
+
+                        <div class="mx-auto max-w-sm text-center">
+
+                            <div class="relative mx-auto mb-8 h-64 w-64
+                        sm:h-80 sm:w-80">
+
+                                <!-- Gradient Ring -->
+                                <div class="absolute inset-0 rounded-full
+                            bg-gradient-to-br from-indigo-500
+                            via-purple-500 to-amber-400 p-1.5
+                            shadow-2xl shadow-indigo-950/50">
+
+                                    <!-- Replace with the founder's real photo -->
+                                    <img src="img/Pravin-Sir.png"
+                                        alt="Pravin R. Mohabey, Founder of Good Luck Computer Classes" loading="lazy"
+                                        class="h-full w-full rounded-full
+                                border-4 border-slate-950
+                                object-cover object-center">
+
+                                </div>
+
+                                <!-- Verified-style decorative icon, not a verification claim -->
+                                <div class="absolute bottom-4 right-2 flex
+                            h-12 w-12 items-center justify-center
+                            rounded-full border-4 border-slate-950
+                            bg-emerald-500 text-white shadow-lg">
+                                    <i class="fa-solid fa-check text-lg"></i>
+                                </div>
+                            </div>
+
+                            <h3 class="text-2xl font-extrabold sm:text-3xl">
+                                Pravin R. Mohabey
+                            </h3>
+
+                            <p class="mt-2 font-semibold text-indigo-300">
+                                Founder & Instructor
+                            </p>
+
+                            <p class="mt-2 text-sm text-slate-400">
+                                Good Luck Computer Classes, Bhandara
+                            </p>
+
+                            <div class="mt-5 inline-flex items-center gap-2
+                        rounded-full border border-white/10
+                        bg-white/5 px-4 py-2 text-xs font-semibold
+                        text-slate-300">
+                                <i class="fa-solid fa-location-dot text-amber-400"></i>
+                                Bhandara, Maharashtra
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Founder Introduction -->
+                    <div class="space-y-7 lg:col-span-3">
+
+                        <div>
+                            <p class="text-sm font-bold uppercase tracking-widest
+                        text-indigo-300">
+                                A Message from Our Founder
+                            </p>
+
+                            <h3 class="mt-4 text-2xl font-extrabold
+                        leading-snug sm:text-3xl">
+                                “Empowering Students with Practical Computer Skills”
+                            </h3>
+                        </div>
+
+                        <p class="leading-8 text-slate-300">
+                            Namaste! I am
+                            <strong class="text-white">Pravin R. Mohabey</strong>,
+                            founder and instructor at
+                            <strong class="text-white">
+                                Good Luck Computer Classes, Bhandara
+                            </strong>,
+                            located near Muslim Library Square.
+                        </p>
+
+                        <p class="leading-8 text-slate-300">
+                            My aim is to help students develop practical computer
+                            knowledge, strengthen their digital skills and build
+                            confidence for their academic and professional journey.
+                            I believe in learning through practice, understanding
+                            concepts clearly and continuously improving one's skills.
+                        </p>
+
+                        <!-- Mentorship Highlights -->
+                        <div class="grid gap-3 sm:grid-cols-2">
+
+                            <div class="flex items-start gap-3 rounded-xl
+                        border border-white/10 bg-white/5 p-4">
+                                <i class="fa-solid fa-circle-check mt-0.5
+                            text-emerald-400"></i>
+                                <span class="text-sm font-medium text-slate-200">
+                                    Personal Doubt-Solving Guidance
+                                </span>
+                            </div>
+
+                            <div class="flex items-start gap-3 rounded-xl
+                        border border-white/10 bg-white/5 p-4">
+                                <i class="fa-solid fa-circle-check mt-0.5
+                            text-emerald-400"></i>
+                                <span class="text-sm font-medium text-slate-200">
+                                    Hands-on Computer Practice
+                                </span>
+                            </div>
+
+                            <div class="flex items-start gap-3 rounded-xl
+                        border border-white/10 bg-white/5 p-4">
+                                <i class="fa-solid fa-circle-check mt-0.5
+                            text-emerald-400"></i>
+                                <span class="text-sm font-medium text-slate-200">
+                                    Exam Preparation Support
+                                </span>
+                            </div>
+
+                            <div class="flex items-start gap-3 rounded-xl
+                        border border-white/10 bg-white/5 p-4">
+                                <i class="fa-solid fa-circle-check mt-0.5
+                            text-emerald-400"></i>
+                                <span class="text-sm font-medium text-slate-200">
+                                    Student-Focused Learning
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <!-- Contact Actions -->
+                        <div class="flex flex-wrap gap-4 pt-2">
+
+                            <a href="tel:+919021179106" class="inline-flex items-center justify-center
+                        gap-2 rounded-xl bg-indigo-600 px-6 py-3.5
+                        text-sm font-bold text-white shadow-lg
+                        shadow-indigo-950/30 transition duration-300
+                        hover:-translate-y-1 hover:bg-indigo-500">
+
+                                <i class="fa-solid fa-phone"></i>
+                                Talk to Pravin Sir
+                            </a>
+
+                            <a href="#contact" class="inline-flex items-center justify-center
+                        gap-2 rounded-xl border border-white/15
+                        px-6 py-3.5 text-sm font-bold text-white
+                        transition duration-300 hover:bg-white/10">
+
+                                <i class="fa-solid fa-envelope"></i>
+                                Get in Touch
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- STUDENT TESTIMONIALS SECTION -->
+        <section id="testimonials"
+            class="py-16 bg-slate-50 dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Section Heading -->
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="inline-flex items-center gap-2 rounded-full
+                bg-amber-100 dark:bg-amber-900/40 px-4 py-2
+                text-xs font-bold text-amber-700 dark:text-amber-300">
+                        <i class="fa-solid fa-star"></i>
+                        STUDENT TESTIMONIALS
+                    </span>
+
+                    <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold
+                text-slate-900 dark:text-white">
+                        What Our Students Say
+                    </h2>
+
+                    <p class="mt-4 text-slate-600 dark:text-slate-400 leading-7">
+                        Real learning experiences from students of
+                        Good Luck Computer Classes.
+                    </p>
+                </div>
+
+                <!-- Testimonials Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6">
+
+                    <!-- REVIEW 1: AKSHAET S. SHUKLA -->
+                    <article class="flex flex-col rounded-2xl border
+                border-slate-200 dark:border-slate-700
+                bg-white dark:bg-slate-950 p-6 sm:p-8 shadow-sm
+                transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+
+                        <div class="flex items-center gap-4">
+                            <div class="flex h-14 w-14 shrink-0 items-center
+                        justify-center rounded-full bg-blue-100
+                        text-blue-700 dark:bg-blue-900/40
+                        dark:text-blue-300 text-xl font-extrabold">
+                                AS
+                            </div>
+
+                            <div>
+                                <h3 class="font-bold text-lg text-slate-900 dark:text-white">
+                                    Akshaet S. Shukla
+                                </h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">
+                                    Web Developer & Digital Marketer
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 flex gap-1 text-amber-400" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <p class="mt-4 flex-1 leading-7 text-slate-600 dark:text-slate-300">
+                            “Learning C and Python from sir at Good Luck Computer
+                            Classes was a great experience. Sir explained programming
+                            concepts step by step in a simple and easy-to-understand
+                            way. He patiently cleared my doubts and helped me improve
+                            my coding skills. These classes helped me build a strong
+                            foundation in programming and become more confident.
+                            I am thankful to sir for his guidance and support!”
+                        </p>
+
+                        <div class="mt-6 border-t border-slate-100
+                    dark:border-slate-800 pt-4">
+                            <span class="text-sm font-semibold text-brand-600 dark:text-brand-400">
+                                <i class="fa-solid fa-graduation-cap mr-1"></i>
+                                C & Python Learning Experience
+                            </span>
+                        </div>
+                    </article>
+
+                    <!-- REVIEW 2: VARSHA DADURWADE -->
+                    <article class="flex flex-col rounded-2xl border
+                border-slate-200 dark:border-slate-700
+                bg-white dark:bg-slate-950 p-6 sm:p-8 shadow-sm
+                transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+
+                        <div class="flex items-center gap-4">
+                            <div class="flex h-14 w-14 shrink-0 items-center
+                        justify-center rounded-full bg-pink-100
+                        text-pink-700 dark:bg-pink-900/40
+                        dark:text-pink-300 text-xl font-extrabold">
+                                VD
+                            </div>
+
+                            <div>
+                                <h3 class="font-bold text-lg text-slate-900 dark:text-white">
+                                    Varsha Dadurwade
+                                </h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">
+                                    Advanced Software Engineer
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 flex gap-1 text-amber-400" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <p class="mt-4 flex-1 leading-7 text-slate-600 dark:text-slate-300">
+                            “I did the Advanced Software Engineering Diploma from
+                            Goodluck Computer Classes and it was the best experience!
+                            Teachers are very friendly and helpful, and I learned so
+                            much — from coding to real software projects. Now I feel
+                            confident to make my own websites and apps. Thank you,
+                            Goodluck! 💻❤️”
+                        </p>
+
+                        <div class="mt-6 border-t border-slate-100
+                    dark:border-slate-800 pt-4">
+                            <span class="text-sm font-semibold text-brand-600 dark:text-brand-400">
+                                <i class="fa-solid fa-graduation-cap mr-1"></i>
+                                Advanced Software Engineering Diploma
+                            </span>
+                        </div>
+                    </article>
+
+                    <!-- REVIEW 3: ARCHISH PAIGWAR -->
+                    <article class="flex flex-col rounded-2xl border
+                border-slate-200 dark:border-slate-700
+                bg-white dark:bg-slate-950 p-6 sm:p-8 shadow-sm
+                transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+
+                        <div class="flex items-center gap-4">
+                            <div class="flex h-14 w-14 shrink-0 items-center
+                        justify-center rounded-full bg-emerald-100
+                        text-emerald-700 dark:bg-emerald-900/40
+                        dark:text-emerald-300 text-xl font-extrabold">
+                                AP
+                            </div>
+
+                            <div>
+                                <h3 class="font-bold text-lg text-slate-900 dark:text-white">
+                                    Archish Paigwar
+                                </h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">
+                                    Student
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 flex gap-1 text-amber-400" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <p class="mt-4 flex-1 leading-7 text-slate-600 dark:text-slate-300">
+                            “Absolutely incredible experience! This computer class
+                            exceeded all my expectations. The instructors are experts,
+                            the lessons are clear, and I feel so much more confident
+                            in my tech skills now. If you’re looking to level up,
+                            this is the place to be! Best institution for Computer
+                            knowledge.”
+                        </p>
+
+                        <div class="mt-6 border-t border-slate-100
+                    dark:border-slate-800 pt-4">
+                            <span class="text-sm font-semibold text-brand-600 dark:text-brand-400">
+                                <i class="fa-solid fa-graduation-cap mr-1"></i>
+                                Python Learning Experience
+                            </span>
+                        </div>
+                    </article>
+
+                    <!-- REVIEW 4: SHARDA MANDHARE -->
+                    <article class="flex flex-col rounded-2xl border
+                border-slate-200 dark:border-slate-700
+                bg-white dark:bg-slate-950 p-6 sm:p-8 shadow-sm
+                transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+
+                        <div class="flex items-center gap-4">
+                            <div class="flex h-14 w-14 shrink-0 items-center
+                        justify-center rounded-full bg-purple-100
+                        text-purple-700 dark:bg-purple-900/40
+                        dark:text-purple-300 text-xl font-extrabold">
+                                SM
+                            </div>
+
+                            <div>
+                                <h3 class="font-bold text-lg text-slate-900 dark:text-white">
+                                    SHARDA MANDHARE
+                                </h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">
+                                    Student
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 flex gap-1 text-amber-400" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <p class="mt-4 flex-1 leading-7 text-slate-600 dark:text-slate-300">
+                            “I absolutely love the teaching techniques at Goodluck
+                            Computer Classes! The instructors explain every concept
+                            in a simple and easy-to-understand way, making learning
+                            enjoyable. I really like the institute and its supportive
+                            learning environment. Whenever I want to learn another
+                            computer course, Goodluck Computer Classes will always
+                            be my first and last choice! 😊”
+                        </p>
+
+                        <div class="mt-6 border-t border-slate-100
+                    dark:border-slate-800 pt-4">
+                            <span class="text-sm font-semibold text-brand-600 dark:text-brand-400">
+                                <i class="fa-solid fa-graduation-cap mr-1"></i>
+                                Computer Courses
+                            </span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= GALLERY & ACHIEVEMENTS ================= -->
+        <section id="gallery-section" class="gallery-section">
+            <style>
+                #gallery-section {
+                    --gallery-bg: #080d1b;
+                    --gallery-card: #111a2d;
+                    --gallery-accent: #fbbf24;
+                    padding: 64px 16px;
+                    color: #f8fafc;
+                    background:
+                        radial-gradient(ellipse at top, #172554 0%, transparent 55%),
+                        linear-gradient(180deg, #080d1b, #0b1120);
+                    font-family: inherit;
+                }
+
+                #gallery-section * {
+                    box-sizing: border-box;
+                }
+
+                #gallery-section .gallery-container {
+                    width: min(1200px, 100%);
+                    margin: auto;
+                }
+
+                #gallery-section .gallery-heading {
+                    text-align: center;
+                    margin-bottom: 34px;
+                }
+
+                #gallery-section .gallery-eyebrow {
+                    display: inline-block;
+                    padding: 7px 13px;
+                    margin-bottom: 13px;
+                    border: 1px solid #fbbf2445;
+                    border-radius: 99px;
+                    color: #fcd34d;
+                    background: #fbbf240d;
+                    font-size: 12px;
+                    font-weight: 800;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                }
+
+                #gallery-section .gallery-heading h2 {
+                    margin: 0;
+                    font-size: clamp(28px, 5vw, 44px);
+                    font-weight: 900;
+                    line-height: 1.15;
+                    letter-spacing: -1px;
+                }
+
+                #gallery-section .gallery-heading h2 span {
+                    color: var(--gallery-accent);
+                }
+
+                #gallery-section .gallery-heading p {
+                    max-width: 620px;
+                    margin: 14px auto 0;
+                    color: #a8b4ca;
+                    font-size: 15px;
+                    line-height: 1.8;
+                }
+
+                #gallery-section .gallery-grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, minmax(0, 1fr));
+                    gap: 16px;
+                }
+
+                #gallery-section .media-tile {
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    min-width: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    aspect-ratio: 4 / 3;
+                    border: 1px solid #ffffff18;
+                    border-radius: 17px;
+                    background: var(--gallery-card);
+                    cursor: zoom-in;
+                    isolation: isolate;
+                    transition: transform .25s ease, border-color .25s ease,
+                        box-shadow .25s ease;
+                }
+
+                #gallery-section .media-tile:hover {
+                    transform: translateY(-5px);
+                    border-color: #fbbf2480;
+                    box-shadow: 0 15px 35px #0006;
+                }
+
+                #gallery-section .media-tile img,
+                #gallery-section .media-tile video {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    background: #060a13;
+                }
+
+                #gallery-section .media-tile::after {
+                    content: "";
+                    position: absolute;
+                    inset: 45% 0 0;
+                    z-index: 1;
+                    pointer-events: none;
+                    background: linear-gradient(transparent, #02061799);
+                    opacity: .7;
+                }
+
+                #gallery-section .tile-label {
+                    position: absolute;
+                    z-index: 2;
+                    left: 12px;
+                    bottom: 12px;
+                    display: flex;
+                    align-items: center;
+                    gap: 7px;
+                    color: white;
+                    font-size: 12px;
+                    font-weight: 800;
+                    text-shadow: 0 1px 5px #000;
+                }
+
+                #gallery-section .tile-label i {
+                    color: #fcd34d;
+                }
+
+                #gallery-section .tile-play {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    z-index: 3;
+                    display: grid;
+                    width: 48px;
+                    height: 48px;
+                    place-items: center;
+                    transform: translate(-50%, -50%);
+                    border: 1px solid #ffffff60;
+                    border-radius: 50%;
+                    color: white;
+                    background: #020617aa;
+                    pointer-events: none;
+                    backdrop-filter: blur(8px);
+                }
+
+                #gallery-section .gallery-footer {
+                    margin-top: 28px;
+                    color: #9caac1;
+                    text-align: center;
+                    font-size: 13px;
+                }
+
+                /* Full-screen media viewer */
+                #gallery-section .gallery-viewer {
+                    position: fixed;
+                    inset: 0;
+                    z-index: 99999;
+                    display: none;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 70px 64px 35px;
+                    background: #02040cf5;
+                    backdrop-filter: blur(14px);
+                }
+
+                #gallery-section .gallery-viewer.open {
+                    display: flex;
+                    animation: galleryFadeIn .2s ease;
+                }
+
+                #gallery-section .viewer-stage {
+                    display: flex;
+                    width: 100%;
+                    height: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 0;
+                    min-height: 0;
+                }
+
+                #gallery-section .gallery-viewer-content {
+                    display: block;
+                    width: auto;
+                    height: auto;
+                    max-width: 100%;
+                    max-height: 100%;
+                    object-fit: contain;
+                    border-radius: 10px;
+                    box-shadow: 0 20px 80px #0008;
+                }
+
+                #gallery-section .viewer-btn {
+                    position: absolute;
+                    z-index: 2;
+                    display: grid;
+                    width: 46px;
+                    height: 46px;
+                    place-items: center;
+                    border: 1px solid #ffffff24;
+                    border-radius: 50%;
+                    color: white;
+                    background: #172033e8;
+                    cursor: pointer;
+                    transition: background .2s, transform .2s;
+                }
+
+                #gallery-section .viewer-btn:hover {
+                    background: #334155;
+                    transform: scale(1.06);
+                }
+
+                #gallery-section .viewer-close {
+                    top: 16px;
+                    right: 18px;
+                    font-size: 22px;
+                }
+
+                #gallery-section .viewer-prev {
+                    left: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                #gallery-section .viewer-next {
+                    right: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                #gallery-section .viewer-prev:hover {
+                    transform: translateY(-50%) scale(1.06);
+                }
+
+                #gallery-section .viewer-next:hover {
+                    transform: translateY(-50%) scale(1.06);
+                }
+
+                #gallery-section .viewer-hint {
+                    position: absolute;
+                    bottom: 12px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    color: #aab5c8;
+                    font-size: 12px;
+                    text-align: center;
+                    white-space: nowrap;
+                }
+
+                @keyframes galleryFadeIn {
+                    from {
+                        opacity: 0;
+                    }
+
+                    to {
+                        opacity: 1;
+                    }
+                }
+
+                @media (max-width: 900px) {
+                    #gallery-section .gallery-grid {
+                        grid-template-columns: repeat(3, minmax(0, 1fr));
+                    }
+                }
+
+                @media (max-width: 600px) {
+                    #gallery-section {
+                        padding: 44px 12px;
+                    }
+
+                    #gallery-section .gallery-grid {
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                        gap: 10px;
+                    }
+
+                    #gallery-section .media-tile {
+                        border-radius: 12px;
+                    }
+
+                    #gallery-section .tile-label {
+                        left: 8px;
+                        bottom: 8px;
+                        font-size: 10px;
+                    }
+
+                    #gallery-section .tile-play {
+                        width: 40px;
+                        height: 40px;
+                    }
+
+                    #gallery-section .gallery-viewer {
+                        padding: 65px 8px 45px;
+                    }
+
+                    #gallery-section .gallery-viewer-content {
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+
+                    #gallery-section .viewer-btn {
+                        width: 40px;
+                        height: 40px;
+                    }
+
+                    #gallery-section .viewer-prev {
+                        left: 7px;
+                    }
+
+                    #gallery-section .viewer-next {
+                        right: 7px;
+                    }
+                }
+
+                @media (prefers-reduced-motion: reduce) {
+
+                    #gallery-section *,
+                    #gallery-section *::before,
+                    #gallery-section *::after {
+                        animation-duration: .01ms !important;
+                        transition-duration: .01ms !important;
+                    }
+                }
+            </style>
+
+            <div class="gallery-container">
+                <header class="gallery-heading">
+                    <span class="gallery-eyebrow">
+                        <i class="fa-solid fa-star"></i> Our Achievements
+                    </span>
+                    <h2>Moments That Make Us <span>Proud</span></h2>
+                    <p>
+                        Our achievements, memorable moments, awards and student activities —
+                        take a look at our journey.
+                    </p>
+                </header>
+
+                <div class="gallery-grid" id="gallery-grid">
+                    <button class="media-tile" type="button" data-type="image" data-src="img/AICP_AWARD2.jpg"
+                        aria-label="View award photograph">
+                        <img src="img/AICP_AWARD2.jpg" alt="Award achievement" loading="lazy" decoding="async">
+                        <span class="tile-label"><i class="fa-solid fa-award"></i> Achievement</span>
+                    </button>
+
+                    <button class="media-tile" type="button" data-type="image" data-src="img/AICPE_AWARD1.jpg"
+                        aria-label="View award photograph">
+                        <img src="img/AICPE_AWARD1.jpg" alt="Award recognition" loading="lazy" decoding="async">
+                        <span class="tile-label"><i class="fa-solid fa-trophy"></i> Recognition</span>
+                    </button>
+
+                    <button class="media-tile" type="button" data-type="image" data-src="img/set1.jpg"
+                        aria-label="View gallery photograph">
+                        <img src="img/set1.jpg" alt="Gallery memory" loading="lazy" decoding="async">
+                        <span class="tile-label"><i class="fa-solid fa-camera"></i> Memories</span>
+                    </button>
+
+                    <button class="media-tile" type="button" data-type="image" data-src="img/newspaper1.jpg"
+                        aria-label="View newspaper feature">
+                        <img src="img/newspaper1.jpg" alt="Newspaper feature" loading="lazy" decoding="async">
+                        <span class="tile-label"><i class="fa-solid fa-newspaper"></i> In The News</span>
+                    </button>
+
+                    <button class="media-tile" type="button" data-type="image" data-src="img/newspaper2.jpg"
+                        aria-label="View newspaper feature">
+                        <img src="img/newspaper2.jpg" alt="Newspaper coverage" loading="lazy" decoding="async">
+                        <span class="tile-label"><i class="fa-solid fa-newspaper"></i> News</span>
+                    </button>
+
+                    <button class="media-tile" type="button" data-type="image" data-src="img/NEWSPAPER3.jpg"
+                        aria-label="View newspaper feature">
+                        <img src="img/NEWSPAPER3.jpg" alt="Newspaper achievement" loading="lazy" decoding="async">
+                        <span class="tile-label"><i class="fa-solid fa-star"></i> Highlights</span>
+                    </button>
+
+                    <button class="media-tile" type="button" data-type="video" data-src="img/AICPE_AWARD.mp4"
+                        aria-label="Play award video">
+                        <video muted playsinline preload="metadata" tabindex="-1" aria-hidden="true">
+                            <source src="img/AICPE_AWARD.mp4" type="video/mp4">
+                        </video>
+                        <span class="tile-play"><i class="fa-solid fa-play"></i></span>
+                        <span class="tile-label"><i class="fa-solid fa-video"></i> Award Video</span>
+                    </button>
+
+                    <button class="media-tile" type="button" data-type="video" data-src="img/Setdistribution1.mp4"
+                        aria-label="Play distribution video">
+                        <video muted playsinline preload="metadata" tabindex="-1" aria-hidden="true">
+                            <source src="img/Setdistribution1.mp4" type="video/mp4">
+                        </video>
+                        <span class="tile-play"><i class="fa-solid fa-play"></i></span>
+                        <span class="tile-label"><i class="fa-solid fa-video"></i> Special Moments</span>
+                    </button>
+                </div>
+
+                <p class="gallery-footer">
+                    <i class="fa-solid fa-hand-pointer"></i>
+                    Tap any photo or video to explore it
+                </p>
+            </div>
+
+            <!-- Fullscreen viewer -->
+            <div id="gallery-media-viewer" class="gallery-viewer" role="dialog" aria-modal="true"
+                aria-label="Gallery media viewer" aria-hidden="true">
+                <button class="viewer-btn viewer-close" id="gallery-viewer-close" type="button"
+                    aria-label="Close viewer">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <button class="viewer-btn viewer-prev" id="gallery-viewer-prev" type="button"
+                    aria-label="Previous media">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div id="gallery-viewer-stage" class="viewer-stage"></div>
+
+                <button class="viewer-btn viewer-next" id="gallery-viewer-next" type="button" aria-label="Next media">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <div class="viewer-hint">Use ← → to navigate · Esc to close</div>
+            </div>
+
+            <script>
+                (() => {
+                    const section = document.getElementById('gallery-section');
+                    if (!section || section.dataset.galleryReady === 'true') return;
+                    section.dataset.galleryReady = 'true';
+
+                    const grid = section.querySelector('#gallery-grid');
+                    const viewer = section.querySelector('#gallery-media-viewer');
+                    const stage = section.querySelector('#gallery-viewer-stage');
+                    const closeBtn = section.querySelector('#gallery-viewer-close');
+                    const prevBtn = section.querySelector('#gallery-viewer-prev');
+                    const nextBtn = section.querySelector('#gallery-viewer-next');
+                    const tiles = [...grid.querySelectorAll('.media-tile')];
+
+                    let current = 0;
+                    let lastFocus = null;
+
+                    function stopViewerVideo() {
+                        const video = stage.querySelector('video');
+                        if (video) {
+                            video.pause();
+                            video.muted = true;
+                            video.removeAttribute('src');
+                            video.load();
+                        }
+                    }
+
+                    function showMedia(index) {
+                        current = (index + tiles.length) % tiles.length;
+                        stopViewerVideo();
+                        stage.replaceChildren();
+
+                        const tile = tiles[current];
+                        const isVideo = tile.dataset.type === 'video';
+                        const media = document.createElement(isVideo ? 'video' : 'img');
+
+                        media.className = 'gallery-viewer-content';
+                        media.src = tile.dataset.src;
+
+                        if (isVideo) {
+                            // Force every newly opened video to start muted.
+                            media.muted = true;
+                            media.defaultMuted = true;
+                            media.setAttribute('muted', '');
+                            media.setAttribute('playsinline', '');
+                            media.setAttribute('webkit-playsinline', '');
+
+                            media.controls = true;
+                            media.autoplay = true;
+                            media.playsInline = true;
+                            media.preload = 'metadata';
+
+                            // Do not force mute again on volumechange:
+                            // that would prevent the user's manual unmute action.
+                        } else {
+                            media.alt = '';
+                            media.decoding = 'async';
+                        }
+
+                        stage.appendChild(media);
+                        viewer.classList.add('open');
+                        viewer.setAttribute('aria-hidden', 'false');
+
+                        if (isVideo) {
+                            const playPromise = media.play();
+                            if (playPromise && typeof playPromise.catch === 'function') {
+                                playPromise.catch(() => {
+                                    // Autoplay may be blocked; native controls remain available.
+                                });
+                            }
+                        }
+                    }
+
+                    function closeViewer() {
+                        stopViewerVideo();
+                        viewer.classList.remove('open');
+                        viewer.setAttribute('aria-hidden', 'true');
+                        stage.replaceChildren();
+                        if (lastFocus && lastFocus.isConnected) lastFocus.focus();
+                    }
+
+                    window.openGalleryPopup = () => {
+                        lastFocus = document.activeElement;
+                        // Existing homepage popup is retained.
+                        const popup = document.getElementById('gallery-popup');
+                        if (popup) {
+                            popup.classList.remove('hidden');
+                            popup.classList.add('flex');
+                            document.body.style.overflow = 'hidden';
+                        } else {
+                            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    };
+
+                    window.closeGalleryPopup = () => {
+                        closeViewer();
+                        const popup = document.getElementById('gallery-popup');
+                        if (popup) {
+                            popup.classList.add('hidden');
+                            popup.classList.remove('flex');
+                        }
+                        document.body.style.overflow = '';
+                        if (lastFocus && lastFocus.isConnected) lastFocus.focus();
+                    };
+
+                    tiles.forEach((tile, index) => {
+                        tile.addEventListener('click', () => {
+                            lastFocus = tile;
+                            showMedia(index);
+                            closeBtn.focus();
+                        });
+                    });
+
+                    closeBtn.addEventListener('click', closeViewer);
+                    prevBtn.addEventListener('click', () => showMedia(current - 1));
+                    nextBtn.addEventListener('click', () => showMedia(current + 1));
+
+                    viewer.addEventListener('click', event => {
+                        if (event.target === viewer) closeViewer();
+                    });
+
+                    document.addEventListener('keydown', event => {
+                        if (!viewer.classList.contains('open')) return;
+
+                        if (event.key === 'Escape') {
+                            closeViewer();
+                        } else if (event.key === 'ArrowRight') {
+                            showMedia(current + 1);
+                        } else if (event.key === 'ArrowLeft') {
+                            showMedia(current - 1);
+                        }
+                    });
+                })();
+            </script>
+        </section>
+        <!-- ================= END GALLERY ================= -->
+        <!-- ================= LOCATION CONTACT SECTION ================= -->
+        <section id="contact" class="py-16 sm:py-20 bg-slate-50 dark:bg-slate-950 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+
+                    <!-- LEFT: LOCATION DETAILS -->
+                    <div class="lg:col-span-6 min-w-0 space-y-6">
+
+                        <div>
+                            <span
+                                class="text-xs font-bold text-brand-600 dark:text-brand-400 uppercase tracking-widest">
+                                <i class="fa-solid fa-location-dot mr-1"></i>
+                                Visit Center
+                            </span>
+
+                            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-2">
+                                Good Luck Computer Classes Bhandara
+                            </h2>
+
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+                                Conveniently located in the heart of Bhandara city,
+                                easily accessible from all local colleges and schools.
+                            </p>
+                        </div>
+
+                        <!-- ADDRESS CARD -->
+                        <div
+                            class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex items-start gap-4 min-w-0">
+
+                            <div
+                                class="w-10 h-10 rounded-xl bg-brand-100 dark:bg-brand-900/50 text-brand-600 dark:text-brand-400 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-map-pin"></i>
+                            </div>
+
+                            <div class="min-w-0 flex-1">
+                                <div class="font-bold text-sm text-slate-900 dark:text-white">
+                                    Institute Address
+                                </div>
+
+                                <p class="text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed break-words">
+                                    Muslim Library Square, In Front of Dr Tembhurne Pathology,
+                                    Near Prashant Medical Stores, Bhandara - 441904,
+                                    Maharashtra
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- PHONE CARD -->
+                        <div
+                            class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex items-start gap-4 min-w-0">
+
+                            <div
+                                class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+
+                            <div class="min-w-0 flex-1">
+                                <div class="font-bold text-sm text-slate-900 dark:text-white">
+                                    Phone &amp; WhatsApp Enquiries
+                                </div>
+
+                                <a href="https://wa.me/919021179106" target="_blank" rel="noopener noreferrer"
+                                    class="inline-block text-sm text-slate-600 dark:text-slate-400 mt-1 hover:text-emerald-600 break-words">
+                                    +91 9021179106
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- TIMINGS CARD -->
+                        <div
+                            class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex items-start gap-4 min-w-0">
+
+                            <div
+                                class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+
+                            <div class="min-w-0 flex-1">
+                                <div class="font-bold text-sm text-slate-900 dark:text-white">
+                                    Class Timings
+                                </div>
+
+                                <p class="text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+                                    Monday to Saturday: 07:00 AM – 08:00 PM
+                                    <span class="block mt-1">Sunday Closed</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- GOOGLE MAPS BUTTON -->
+                        <div class="pt-1">
+                            <a href="https://maps.google.com/?q=Goodluck+Computer+Classes+Bhandara" target="_blank"
+                                rel="noopener noreferrer"
+                                class="w-full sm:w-auto px-5 py-3 rounded-xl bg-slate-900 dark:bg-slate-800 text-white font-bold text-sm inline-flex items-center justify-center gap-2 hover:bg-brand-600 transition-colors">
+
+                                <i class="fa-solid fa-diamond-turn-right text-gold-400"></i>
+                                Open in Google Maps Directions
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT: ADMISSION ENQUIRY FORM -->
+                    <div class="lg:col-span-6 min-w-0">
+
+                        <div
+                            class="w-full min-w-0 box-border rounded-2xl sm:rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 sm:p-6 lg:p-7 shadow-xl">
+
+                            <!-- FORM HEADING -->
+                            <div class="mb-6 pr-2">
+                                <span
+                                    class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
+                                    <i class="fa-solid fa-graduation-cap mr-1"></i>
+                                    Admission Enquiry
+                                </span>
+
+                                <h3 class="text-xl sm:text-2xl font-extrabold mt-2 text-slate-900 dark:text-white">
+                                    Start Your Learning Journey
+                                </h3>
+
+                                <p class="text-sm leading-relaxed mt-2 text-slate-500 dark:text-slate-400">
+                                    Fill in your details and continue to WhatsApp to send
+                                    your enquiry directly to our institute.
+                                </p>
+                            </div>
+
+                            <!-- ADMISSION FORM -->
+                            <form id="contact-student-enquiry-form" class="space-y-4">
+
+                                <!-- STUDENT NAME -->
+                                <div class="min-w-0">
+                                    <label for="contact-student-name"
+                                        class="block text-sm font-bold mb-1.5 text-slate-700 dark:text-slate-300">
+                                        Student Full Name *
+                                    </label>
+
+                                    <input id="contact-student-name" name="studentName" type="text" required
+                                        maxlength="100" autocomplete="name" placeholder="Enter your full name"
+                                        class="block w-full min-w-0 box-border p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500">
+                                </div>
+
+                                <!-- PHONE AND CITY -->
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                                    <div class="min-w-0">
+                                        <label for="contact-student-phone"
+                                            class="block text-sm font-bold mb-1.5 text-slate-700 dark:text-slate-300">
+                                            Mobile Number *
+                                        </label>
+
+                                        <input id="contact-student-phone" name="phone" type="tel" required
+                                            maxlength="10" inputmode="numeric" autocomplete="tel" pattern="[0-9]{10}"
+                                            placeholder="Enter 10-digit mobile number"
+                                            class="block w-full min-w-0 box-border p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500">
+                                    </div>
+
+                                    <div class="min-w-0">
+                                        <label for="contact-student-city"
+                                            class="block text-sm font-bold mb-1.5 text-slate-700 dark:text-slate-300">
+                                            City / Town *
+                                        </label>
+
+                                        <input id="contact-student-city" name="city" type="text" required
+                                            maxlength="100" autocomplete="address-level2" placeholder="Enter your city"
+                                            class="block w-full min-w-0 box-border p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500">
+                                    </div>
+
+                                </div>
+
+                                <!-- COURSE CATEGORY -->
+                                <div class="min-w-0">
+                                    <label for="contact-student-category">
+                                        Course Category *
+                                    </label>
+
+                                    <select id="contact-student-category" name="category" required
+                                        class="block w-full min-w-0 box-border p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500">
+                                        <option value="">Select Course Category</option>
+                                        <option value="programming">IT &amp; Programming</option>
+                                        <option value="accounting">Accounting &amp; Finance</option>
+                                        <option value="design">Design &amp; Digital Media</option>
+                                        <option value="computer">Computer &amp; Office Courses</option>
+                                        <option value="hardware">Hardware &amp; Networking</option>
+                                        <option value="vocational">Vocational &amp; Professional Skills</option>
+                                    </select>
+                                </div>
+
+                                <!-- INTERESTED COURSE -->
+                                <div class="min-w-0">
+                                    <label for="contact-student-course">
+                                        Interested Course *
+                                    </label>
+
+                                    <select id="contact-student-course" name="course" required disabled
+                                        class="block w-full min-w-0 box-border p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60">
+
+                                        <option value="">First select a course category</option>
+                                    </select>
+                                </div>
+
+                                <!-- EDUCATION -->
+                                <div class="min-w-0">
+                                    <label for="contact-student-education"
+                                        class="block text-sm font-bold mb-1.5 text-slate-700 dark:text-slate-300">
+                                        Current Education
+                                    </label>
+
+                                    <select id="contact-student-education" name="education"
+                                        class="block w-full min-w-0 box-border p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white outline-none focus:ring-2 focus:ring-indigo-500">
+
+                                        <option value="">Select your education</option>
+                                        <option>School Student</option>
+                                        <option>12th Pass</option>
+                                        <option>Graduate</option>
+                                        <option>Undergraduate</option>
+                                        <option>Diploma / Polytechnic</option>
+                                        <option>Working Professional</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+
+                                <!-- OPTIONAL MESSAGE -->
+                                <div class="min-w-0">
+                                    <label for="contact-student-message"
+                                        class="block text-sm font-bold mb-1.5 text-slate-700 dark:text-slate-300">
+                                        Your Question (Optional)
+                                    </label>
+
+                                    <textarea id="contact-student-message" name="message" rows="3" maxlength="1000"
+                                        placeholder="Ask about fees, batches, duration or syllabus..."
+                                        class="block w-full min-w-0 box-border p-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white outline-none resize-y focus:ring-2 focus:ring-indigo-500"></textarea>
+                                </div>
+
+                                <!-- SUBMIT BUTTON -->
+                                <button type="submit"
+                                    class="w-full min-w-0 box-border py-3.5 px-4 rounded-xl bg-green-600 hover:bg-green-700 active:bg-green-800 text-white font-extrabold text-sm sm:text-base transition-colors flex items-center justify-center gap-2">
+
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                    <span>Submit Enquiry on WhatsApp</span>
+                                </button>
+
+                                <p class="text-xs text-center leading-relaxed text-slate-500 dark:text-slate-400">
+                                    WhatsApp will open with your enquiry message.
+                                    You must press Send in WhatsApp to deliver it.
+                                </p>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+<script>
+(() => {
+    const form = document.getElementById(
+        "contact-student-enquiry-form"
+    );
+
+    if (!form || form.dataset.contactReady === "true") return;
+    form.dataset.contactReady = "true";
+
+    const categorySelect = document.getElementById(
+        "contact-student-category"
+    );
+
+    const courseSelect = document.getElementById(
+        "contact-student-course"
+    );
+
+    if (!categorySelect || !courseSelect) return;
+
+    // 1. INTERESTED COURSE DROPDOWN
+    categorySelect.addEventListener("change", function () {
+        const selectedCategory = this.value;
+
+        courseSelect.replaceChildren();
+
+        const placeholder = document.createElement("option");
+        placeholder.value = "";
+        placeholder.textContent = selectedCategory
+            ? "Select Interested Course"
+            : "First select a course category";
+
+        courseSelect.appendChild(placeholder);
+
+        const matchingCourses = courses.filter(
+            course => course.category === selectedCategory
+        );
+
+        matchingCourses.forEach(course => {
+            const option = document.createElement("option");
+            option.value = course.name;
+            option.textContent = course.name;
+            courseSelect.appendChild(option);
+        });
+
+        courseSelect.disabled = matchingCourses.length === 0;
+
+        if (selectedCategory && matchingCourses.length === 0) {
+            placeholder.textContent = "No courses available";
+        }
+    });
+
+    // 2. WHATSAPP SUBMIT - PREVENT PAGE REFRESH
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (!form.reportValidity()) return;
+
+        const getValue = name =>
+            (form.querySelector(`[name="${name}"]`)?.value || "").trim();
+
+        const studentName = getValue("studentName");
+        const phone = getValue("phone");
+        const city = getValue("city");
+        const course = courseSelect.value;
+        const education = getValue("education") || "Not specified";
+        const question = getValue("message") || "None";
+
+        if (
+            !studentName ||
+            !phone ||
+            !city ||
+            !categorySelect.value ||
+            !course
+        ) {
+            alert("Please fill in all required fields and select a course.");
+            return;
+        }
+
+        const categoryName =
+            categorySelect.options[categorySelect.selectedIndex].text;
+
+        const message =
+`*Admission Enquiry*
+Name: ${studentName}
+Mobile: ${phone}
+City: ${city}
+Course Category: ${categoryName}
+Interested Course: ${course}
+Education: ${education}
+Question: ${question}`;
+
+        const whatsappURL =
+            "https://wa.me/919021179106?text=" +
+            encodeURIComponent(message);
+
+        // Open WhatsApp from the submit action
+        const whatsappTab = window.open(whatsappURL, "_blank");
+
+        if (!whatsappTab) {
+            window.location.href = whatsappURL;
+        }
+    });
+})();
+</script>
+
+        </section>
+
+        <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="grid md:grid-cols-4 gap-8 pb-8 border-b border-slate-900 text-xs">
+
+                    <div class="space-y-3">
+
+                        <div class="flex items-center gap-2">
+
+                            <span class="text-lg font-black text-white">GOOD LUCK COMPUTER CLASSES</span>
+
+                        </div>
+
+                        <p class="leading-relaxed">
+
+                            Premier Computer & Technical Institute in Bhandara.
+
+                            Academy under Pravin Mohabey Sir.
+
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <h4 class="text-white font-bold mb-3 text-sm">Top Courses</h4>
+
+                        <ul class="space-y-2">
+
+                            <li><a href="#courses" class="hover:text-white">IT & Programming</a></li>
+
+                            <li><a href="#courses" class="hover:text-white">Tally Prime GST Accounting</a>
+                            </li>
+
+                            <li><a href="#courses" class="hover:text-white">Typing Typing
+                                    English/Marathi</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div>
+
+                        <h4 class="text-white font-bold mb-3 text-sm">Interactive Tools</h4>
+
+                        <ul class="space-y-2">
+
+                            <li><a href="#typing-zone" class="hover:text-white"><i
+                                        class="fa-solid fa-keyboard text-brand-500 mr-1"></i> Live Typing
+                                    Speed Test</a>
+
+                            </li>
+
+                            <li><a href="#quiz-arena" class="hover:text-white"><i
+                                        class="fa-solid fa-graduation-cap text-purple-400 mr-1"></i> Test
+
+                                    Simulator</a></li>
+
+                            <li><a href="#code-lab" class="hover:text-white"><i
+                                        class="fa-solid fa-code text-indigo-400 mr-1"></i> Online Code
+                                    Sandbox</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div>
+
+                        <h4 class="text-white font-bold mb-3 text-sm">Contact Info</h4>
+
+                        <p class="mb-2">Muslim Library Sq, Bhandara - 441904</p>
+
+                        <p class="mb-2">Phone: +91 9021179106</p>
+
+                        <p>Email: goodluckcomputers1981@gmail.com</p>
+
+                    </div>
+
+                </div>
+
+                <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs gap-4">
+
+                    <p>
+
+                        © 2026 Good Luck Computer Classes, Bhandara.<br>
+
+                        All rights reserved.<br>
+
+                        Director: Pravin R. Mohabey.
+
+                    </p>
+
+                    <!-- LOTUS CRAFTT — Premium Developer Advertisement Badge -->
+
+                    <div class="lc-dev-badge">
+
+                        <span class="lc-dev-glow" aria-hidden="true"></span>
+
+                        <div class="lc-dev-inner">
+
+                            <span class="lc-dev-caption">
+
+                                Crafted with <span class="lc-dev-heart">♥</span> by
+
+                            </span>
+
+                            <div class="lc-dev-identity">
+
+                                <a class="lc-dev-brand" href="https://Lotuscraftt.github.io" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Explore Lotus Craftt portfolio">
+
+                                    <span class="lc-dev-gold">LOTUS CRAFTT</span>
+
+                                    <span class="lc-dev-dot" aria-hidden="true">•</span>
+
+                                    <span class="lc-dev-name">Akshaet Shukla</span>
+
+                                </a>
+
+                                <div class="lc-dev-socials">
+
+                                    <a class="lc-dev-social lc-dev-instagram"
+                                        href="https://instagram.com/akshaetshukla.dev" target="_blank"
+                                        rel="noopener noreferrer" aria-label="Visit Instagram" title="Instagram">
+
+                                        <svg viewBox="0 0 24 24" aria-hidden="true">
+
+                                            <rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none"
+                                                stroke="currentColor" stroke-width="1.8" />
+
+                                            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor"
+                                                stroke-width="1.8" />
+
+                                            <circle cx="17.6" cy="6.7" r="1.1" fill="currentColor" />
+
+                                        </svg>
+
+                                    </a>
+
+                                    <a class="lc-dev-social lc-dev-email" href="mailto:akshaetshukla.dev@gmail.com"
+                                        aria-label="Email Akshaet Shukla" title="Send an email">
+
+                                        <svg viewBox="0 0 24 24" aria-hidden="true">
+
+                                            <rect x="3" y="5" width="18" height="14" rx="3" fill="none"
+                                                stroke="currentColor" stroke-width="1.8" />
+
+                                            <path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+
+                                        </svg>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex gap-4">
+
+                        <a href="https://www.facebook.com/mohabeysir/" class="hover:text-white"><i
+                                class="fa-brands fa-facebook text-lg"></i></a>
+
+                        <a href="https://wa.me/919021179106" target="_blank" class="hover:text-emerald-400"><i
+                                class="fa-brands fa-whatsapp text-lg"></i></a>
+
+                        <a href="https://youtube.com/@goodluckcomputerclassesbha2046?si=hrvTTGMTK35mPNAW"
+                            class="hover:text-white"><i class="fa-brands fa-youtube text-lg"></i></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+        <!-- Custom Notification Toast -->
+        <div id="toast-msg"
+            class="fixed bottom-6 right-6 z-50 hidden bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl border border-slate-800 text-xs font-semibold flex items-center gap-3">
+            <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+            <span id="toast-text">Message sent successfully!</span>
+        </div>
+
+        <script src="script.js"></script>
+    </main>
+</body>
+
+</html>
